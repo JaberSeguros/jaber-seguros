@@ -3,6 +3,7 @@
 import { ArrowRightIcon, ChevronDownIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { useCallback, useEffect, useRef } from "react";
 import { useMenu } from "@/contexts/menu-context";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
@@ -18,6 +19,27 @@ export function SmallDevicesMenu({
   setOpenedOption: (option: "seguros" | "consorcios" | null) => void;
 }) {
   const { isMenuOpen, setIsMenuOpen } = useMenu();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const closeTabs = useCallback(() => {
+    setIsMenuOpen(false);
+  }, [setIsMenuOpen]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        closeTabs();
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [closeTabs, isMenuOpen]);
   return (
     <nav
       id="small-devices-menu"
@@ -26,6 +48,7 @@ export function SmallDevicesMenu({
         "-translate-x-1/2 absolute top-[120%] left-1/2 flex h-fit max-h-[calc(100vh-11.2rem)] w-[93vw] max-w-5xl flex-col gap-4 rounded-2xl sm:max-h-[calc(100vh-6.5rem)]",
         isMenuOpen ? "pointer-events-auto" : "pointer-events-none",
       )}
+      ref={containerRef}
     >
       <motion.div
         variants={menuVariants}
