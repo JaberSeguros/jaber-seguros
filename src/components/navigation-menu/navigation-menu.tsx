@@ -21,7 +21,7 @@ export function Navigation() {
             src="/assets/logos/jaber.png"
             alt="Jaber Seguros"
             width={125}
-            height={125}
+            height={65}
             className="h-auto w-[125px]"
           />
         </Link>

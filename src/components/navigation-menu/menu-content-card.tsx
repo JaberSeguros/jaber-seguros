@@ -17,7 +17,7 @@ export function MenuContentCard({ content }: MenuContentCardProps) {
   return (
     <Card
       key={content.id}
-      className="w-full max-w-[370px] md:max-w-xs lg:bg-muted-foreground/20"
+      className="flex w-full max-w-[370px] flex-col lg:w-xs"
     >
       <CardHeader>
         <div className="relative aspect-video w-full overflow-hidden rounded-xl">
@@ -32,11 +32,11 @@ export function MenuContentCard({ content }: MenuContentCardProps) {
       <CardContent>
         <div className="w-full space-y-1">
           <h3 className="font-bold text-lg">{content.type}</h3>
-          <p className="font-semibold">{content.headline}</p>
-          <p className="text-foreground/70 text-sm">{content.sub}</p>
+          <p className="font-semibold text-foreground/90">{content.headline}</p>
+          <p className="text-muted-foreground text-sm">{content.sub}</p>
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="mt-auto">
         <Button className="w-full rounded-full py-6">{content.cta}</Button>
       </CardFooter>
     </Card>

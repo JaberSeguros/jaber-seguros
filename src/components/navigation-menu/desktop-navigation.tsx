@@ -20,12 +20,7 @@ export function DesktopNavigation() {
               Seguros
             </NavigationMenuTrigger>
             <NavigationMenuContent className="bg-transparent">
-              <NavigationMenuCardContent
-                title="Seguros pensados para proteger o que realmente importa"
-                description="Proteção inteligente em saúde e vida empresarial, com o cuidado de quem entende que cada cliente é único."
-                cta="Solicitar Atendimento Personalizado"
-                items={seguros}
-              />
+              <NavigationMenuCardContent subject="seguros" items={seguros} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -33,12 +28,7 @@ export function DesktopNavigation() {
               Consórcios
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuCardContent
-                title="Consórcios para conquistar seus planos com segurança"
-                description="Planejamento inteligente para imóveis, veículos e veículos pesados, com condições flexíveis e acompanhamento especializado do início à contemplação."
-                cta="Receber Orientação Personalizada"
-                items={consorcios}
-              />
+              <NavigationMenuCardContent subject="consorcios" items={consorcios} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
