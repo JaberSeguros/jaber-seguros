@@ -1,6 +1,7 @@
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Briefcase, Handshake, Headset } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HeroVideo from "./components/hero-video";
 
@@ -27,7 +28,10 @@ const info = [
 
 export function Hero() {
   return (
-    <div className="flex h-screen min-h-[500px] w-full items-center justify-center bg-zinc-50 font-sans">
+    <section
+      className="flex h-screen min-h-[500px] w-full items-center justify-center bg-zinc-50 font-sans"
+      aria-label="Hero - Corretora de seguros e consórcios Jaber Seguros"
+    >
       <main className="flex h-full w-full bg-white pt-2 sm:items-start">
         <HeroVideo>
           <div
@@ -43,35 +47,53 @@ export function Hero() {
                   Seguros e consórcios pensados para o que realmente importa,
                   com atendimento personalizado e parceiros líderes de mercado.
                 </p>
-                <Button className="cursor-pointer rounded-sm py-7 font-bold">
-                  <FontAwesomeIcon icon={faWhatsapp} className="size-5" />
-                  Chamar no WhatsApp
+                <Button
+                  className="cursor-pointer rounded-sm py-7 font-bold"
+                  asChild
+                >
+                  <Link
+                    href="https://wa.me/5511999999999"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Fale conosco no WhatsApp - Jaber Seguros"
+                    aria-label="Abrir conversa no WhatsApp com Jaber Seguros"
+                  >
+                    <FontAwesomeIcon
+                      icon={faWhatsapp}
+                      className="size-5"
+                      aria-hidden
+                    />
+                    Chamar no WhatsApp
+                  </Link>
                 </Button>
               </div>
-              <div className="flex w-fit flex-wrap items-center gap-2 rounded-md md:w-full md:justify-center md:bg-foreground/40 md:p-4">
-                {info.map((info) => (
-                  <div
-                    key={info.id}
+              <ul
+                className="flex w-fit flex-wrap items-center gap-2 rounded-md md:w-full md:justify-center md:bg-foreground/40 md:p-4"
+                aria-label="Diferenciais da corretora"
+              >
+                {info.map((item) => (
+                  <li
+                    key={item.id}
                     className="flex w-full items-center gap-2 rounded-md bg-foreground/40 p-2 sm:w-fit md:bg-transparent"
                   >
-                    <div className="rounded-full bg-primary p-2">
-                      {info.Icon}
+                    <div className="rounded-full bg-primary p-2" aria-hidden>
+                      {item.Icon}
                     </div>
                     <div className="space-y-1">
                       <p className="font-bold text-primary-foreground md:text-lg lg:text-2xl">
-                        {info.strong}
+                        {item.strong}
                       </p>
                       <p className="text-primary-foreground text-xs md:text-sm lg:text-base">
-                        {info.sub}
+                        {item.sub}
                       </p>
                     </div>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </HeroVideo>
       </main>
-    </div>
+    </section>
   );
 }

@@ -94,6 +94,7 @@ export default function HeroVideo({
           onCanPlay={onCanPlay}
           onLoadedData={onCanPlay}
           aria-label="Vídeo de apresentação Jaber Seguros"
+          title="Jaber Seguros - Corretora de seguros e consórcios"
         >
           {VIDEO_SOURCES.map(({ src, type }) => (
             <source key={type} src={src} type={type} />
