@@ -84,7 +84,7 @@ export function Hero() {
                         {item.Icon}
                       </div>
                       <div className="space-y-1">
-                        <p className="font-bold text-primary-foreground md:text-lg">
+                        <p className="font-bold text-primary-foreground md:text-lg xl:text-2xl">
                           {item.strong}
                         </p>
                         <p className="text-primary-foreground text-xs md:text-sm">
