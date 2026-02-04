@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <div className="w-full min-w-0 space-y-20 overflow-x-hidden">
       <Hero />
-      <div className="w-full min-w-0 overflow-x-hidden">
+      {/* <div className="w-full min-w-0 overflow-x-hidden">
         <LogoCloudDemo />
-      </div>
+      </div> */}
       <AboutUs />
     </div>
   );
