@@ -65,7 +65,7 @@ export function AboutUs() {
                 src="/assets/about/about-2.webp"
               />
             </div>
-            <div className="flex h-full w-full max-w-sm flex-col justify-between gap-4 border">
+            <div className="flex h-full w-full max-w-sm flex-col justify-between gap-4">
               <ul className="space-y-2 md:space-y-3">
                 {info.map((item) => (
                   <li key={item.id} className="flex items-center gap-2">
