@@ -6,7 +6,7 @@ export const seguros = [
     headline: "Proteção para quem mais importa",
     sub: "Planos de saúde acessíveis e sem burocracia.",
     cta: "Conheça os planos",
-    href: "/seguro-saude",
+    href: "/servicos/seguro-saude",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const seguros = [
     headline: "Proteja quem faz sua empresa acontecer",
     sub: "Seguro de vida empresarial com cobertura abrangente e customizada.",
     cta: "Conheça os planos",
-    href: "/seguro-vida-empresarial",
+    href: "/servicos/seguro-vida-empresarial",
   },
 ];
 
@@ -27,7 +27,7 @@ export const consorcios = [
     headline: "Força para grandes conquistas",
     sub: "Consórcio para máquinas e veículos pesados, com planejamento e segurança.",
     cta: "Conheça os planos",
-    href: "/veiculo-pesado",
+    href: "/servicos/veiculo-pesado",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ export const consorcios = [
     headline: "Seu próximo veículo, sem juros",
     sub: "Planeje a compra do seu carro ou moto com parcelas que cabem no bolso.",
     cta: "Conheça os planos",
-    href: "/veiculo",
+    href: "/servicos/veiculo",
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ export const consorcios = [
     headline: "O caminho seguro para seu imóvel",
     sub: "Conquiste sua casa ou investimento imobiliário com planejamento e segurança.",
     cta: "Conheça os planos",
-    href: "/imovel",
+    href: "/servicos/imovel",
   },
   {
     id: 4,
@@ -54,6 +54,6 @@ export const consorcios = [
     headline: "Invista no futuro com economia",
     sub: "Consórcio para energia solar e soluções sustentáveis, sem juros.",
     cta: "Conheça os planos",
-    href: "/sustentavel",
+    href: "/servicos/sustentavel",
   },
 ];
