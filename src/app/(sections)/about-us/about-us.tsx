@@ -28,7 +28,7 @@ export function AboutUs() {
 
   return (
     <section className="mx-auto min-h-screen w-full max-w-[1720px] px-4">
-      <div className="flex w-full flex-col gap-10">
+      <div className="flex w-full flex-col gap-10 lg:gap-15">
         <div className="flex w-full flex-col items-start gap-6 lg:flex-row lg:justify-between">
           <div className="flex items-center">
             <Separator />
@@ -54,18 +54,18 @@ export function AboutUs() {
         <div className="flex flex-col gap-4 lg:flex-row lg:justify-between">
           <div className="w-full">
             <AnimatedImage
-              imageContainerClassName="aspect-square max-h-[300px] lg:max-h-[550px] w-full max-w-3xl overflow-hidden rounded-xl"
+              imageContainerClassName="aspect-square max-h-[300px] md:max-h-[550px] w-full max-w-3xl overflow-hidden rounded-xl"
               src="/assets/about/about-1.webp"
             />
           </div>
-          <div className="flex w-full max-w-lg items-start gap-4 lg:flex-col lg:gap-6">
+          <div className="flex w-full max-w-4xl items-start gap-4 lg:max-w-lg lg:flex-col lg:gap-6">
             <div className="w-full">
               <AnimatedImage
                 imageContainerClassName="aspect-square md:aspect-video max-h-[550px] w-full max-w-lg overflow-hidden rounded-xl"
                 src="/assets/about/about-2.webp"
               />
             </div>
-            <div className="flex h-full w-full max-w-sm flex-col justify-between gap-4">
+            <div className="flex h-full w-full max-w-sm flex-col justify-between gap-4 border">
               <ul className="space-y-2 md:space-y-3">
                 {info.map((item) => (
                   <li key={item.id} className="flex items-center gap-2">

@@ -1,6 +1,7 @@
 import { LogoCloudDemo } from "@/components/ui/logo-cloud-demo";
 import { AboutUs } from "./(sections)/about-us/about-us";
 import { Hero } from "./(sections)/hero/hero";
+import { Services } from "./(sections)/services/servicos";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <LogoCloudDemo />
       </div> */}
       <AboutUs />
+      <Services />
     </div>
   );
 }
