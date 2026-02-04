@@ -44,7 +44,7 @@ export function Navigation() {
             title="Fale Conosco - Contato Jaber Seguros"
           >
             Fale Conosco
-            <Button className="rounded-full py-5">
+            <Button className="cursor-pointer rounded-full py-5">
               <ArrowRightIcon className="-rotate-45" aria-hidden />
             </Button>
           </Link>
