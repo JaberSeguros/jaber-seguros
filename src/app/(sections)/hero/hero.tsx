@@ -29,10 +29,10 @@ const info = [
 export function Hero() {
   return (
     <section
-      className="flex min-h-screen w-full justify-center bg-zinc-50 font-sans"
+      className="flex min-h-screen w-full justify-center font-sans"
       aria-label="Hero - Corretora de seguros e consórcios Jaber Seguros"
     >
-      <main className="flex h-full w-full bg-white pt-2 sm:items-start">
+      <main className="flex h-full w-full bg-background pt-2 sm:items-start">
         <HeroVideo>
           <div
             className="flex size-full flex-col justify-end p-4 md:p-6 lg:px-10"
