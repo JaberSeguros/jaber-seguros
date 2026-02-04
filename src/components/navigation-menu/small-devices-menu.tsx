@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  ArrowRightIcon,
-  ChevronDownIcon,
-} from "lucide-react";
+import { ArrowRightIcon, ChevronDownIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useMenu } from "@/contexts/menu-context";
@@ -26,8 +23,8 @@ export function SmallDevicesMenu({
       id="small-devices-menu"
       aria-label="Menu de navegação mobile"
       className={cn(
-        "-translate-x-1/2 absolute top-[120%] left-1/2 flex h-fit w-[93vw] max-w-5xl flex-col gap-4 rounded-2xl",
-        "max-h-[calc(100vh-11.2rem)] sm:max-h-[calc(100vh-6.5rem)]",
+        "-translate-x-1/2 absolute top-[120%] left-1/2 flex h-fit max-h-[calc(100vh-11.2rem)] w-[93vw] max-w-5xl flex-col gap-4 rounded-2xl sm:max-h-[calc(100vh-6.5rem)]",
+        isMenuOpen ? "pointer-events-auto" : "pointer-events-none",
       )}
     >
       <motion.div

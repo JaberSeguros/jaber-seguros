@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 
 const POSTER_SRC = "/assets/hero-image.webp";
 const VIDEO_SOURCES = [
-  { src: "/assets/hero-1280.webm", type: "video/webm" },
   { src: "/assets/hero-12s-24fps-1000k-1280.mp4", type: "video/mp4" },
 ] as const;
 
@@ -58,7 +57,7 @@ export default function HeroVideo({
   const showPoster = !loadVideo || !videoReady;
 
   return (
-    <header className="relative mx-auto h-[calc(100dvh-1rem)] min-h-[500px] w-[calc(100%-1rem)] overflow-hidden rounded-4xl brightness-80">
+    <header className="relative mx-auto h-[calc(100dvh-1rem)] min-h-[600px] w-[calc(100%-1rem)] overflow-hidden rounded-4xl">
       {/* Poster: LCP image, fades out when video is ready */}
       <div
         className={cn(
@@ -73,7 +72,7 @@ export default function HeroVideo({
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-center brightness-60"
           quality={85}
         />
       </div>
@@ -89,7 +88,7 @@ export default function HeroVideo({
           muted
           loop
           className={cn(
-            "absolute inset-0 size-full object-cover object-center transition-opacity duration-700 ease-out",
+            "absolute inset-0 size-full object-cover object-center brightness-60 transition-opacity duration-700 ease-out",
             videoReady ? "opacity-100" : "opacity-0",
           )}
           onCanPlay={onCanPlay}
