@@ -17,7 +17,7 @@ export function SmallDevicesMenu({
   openedOption: "seguros" | "consorcios" | null;
   setOpenedOption: (option: "seguros" | "consorcios" | null) => void;
 }) {
-  const { isMenuOpen } = useMenu();
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
   return (
     <nav
       id="small-devices-menu"
@@ -110,6 +110,7 @@ export function SmallDevicesMenu({
             href="/servicos"
             className="flex h-17 w-full items-center justify-between px-7 font-semibold text-lg"
             title="Serviços - Seguros e consórcios Jaber Seguros"
+            onClick={() => setIsMenuOpen(false)}
           >
             Serviços
             <ArrowRightIcon className="-rotate-45 size-6" aria-hidden />
@@ -120,6 +121,7 @@ export function SmallDevicesMenu({
             href="/sobre-nos"
             className="flex h-17 w-full items-center justify-between px-7 font-semibold text-lg"
             title="Sobre nós - Conheça a Jaber Seguros"
+            onClick={() => setIsMenuOpen(false)}
           >
             Sobre nós
             <ArrowRightIcon className="-rotate-45 size-6" aria-hidden />
@@ -140,6 +142,7 @@ export function SmallDevicesMenu({
           href="/contato"
           className="flex items-center gap-2 font-semibold text-lg"
           title="Fale Conosco - Contato Jaber Seguros"
+          onClick={() => setIsMenuOpen(false)}
         >
           Fale Conosco
           <Button className="rounded-full py-6">

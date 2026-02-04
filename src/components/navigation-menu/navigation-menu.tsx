@@ -6,6 +6,7 @@ import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useMenu } from "@/contexts/menu-context";
 import { Button } from "../ui/button";
 import { DesktopNavigation } from "./desktop-navigation";
 import { MobileNavigation } from "./mobile-navigation";
@@ -15,6 +16,7 @@ export function Navigation() {
   const [openedOption, setOpenedOption] = useState<
     "seguros" | "consorcios" | null
   >(null);
+  const { setIsMenuOpen } = useMenu();
   return (
     <header
       className="-translate-x-1/2 fixed top-4 left-1/2 z-100 w-[93vw] max-w-5xl rounded-full bg-background pe-3 shadow-md md:pe-4"
@@ -25,6 +27,7 @@ export function Navigation() {
           href="/"
           title="Jaber Seguros - Corretora de seguros e consórcios"
           aria-label="Ir para página inicial - Jaber Seguros"
+          onClick={() => setIsMenuOpen(false)}
         >
           <Image
             src="/assets/logos/jaber.png"

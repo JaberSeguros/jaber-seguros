@@ -1,5 +1,7 @@
 /** biome-ignore-all lint/a11y/useSemanticElements: <because it's a card> */
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useMenu } from "@/contexts/menu-context";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 
@@ -11,10 +13,13 @@ type MenuContentCardProps = {
     headline: string;
     sub: string;
     cta: string;
+    href: string;
   };
 };
 
 export function MenuContentCard({ content }: MenuContentCardProps) {
+  const router = useRouter();
+  const { setIsMenuOpen } = useMenu();
   return (
     <Card
       key={content.id}
@@ -43,7 +48,15 @@ export function MenuContentCard({ content }: MenuContentCardProps) {
         </div>
       </CardContent>
       <CardFooter className="mt-auto">
-        <Button className="w-full rounded-full py-6">{content.cta}</Button>
+        <Button
+          className="w-full rounded-full py-6"
+          onClick={() => {
+            setIsMenuOpen(false);
+            router.push(content.href);
+          }}
+        >
+          {content.cta}
+        </Button>
       </CardFooter>
     </Card>
   );

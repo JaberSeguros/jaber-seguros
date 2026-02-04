@@ -11,6 +11,7 @@ type NavigationMenuCardContentProps = {
     headline: string;
     sub: string;
     cta: string;
+    href: string;
   }[];
 };
 
