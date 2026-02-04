@@ -1,6 +1,6 @@
 "use client";
 
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, XIcon } from "lucide-react";
 import { useMenu } from "@/contexts/menu-context";
 import { Button } from "../ui/button";
 
@@ -31,8 +31,15 @@ export function MobileNavigation({
         aria-expanded={isMenuOpen}
         aria-controls="small-devices-menu"
       >
-        {isMenuOpen ? "Fechar" : "Menu"}
-        <MenuIcon className="size-6" aria-hidden />
+        {isMenuOpen ? (
+          <>
+            Fechar <XIcon className="size-5" aria-hidden />
+          </>
+        ) : (
+          <>
+            Menu <MenuIcon className="size-5" aria-hidden />
+          </>
+        )}
       </Button>
     </div>
   );

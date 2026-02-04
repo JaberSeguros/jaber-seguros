@@ -3,7 +3,6 @@
 import {
   ArrowRightIcon,
   ChevronDownIcon,
-  ChevronRightIcon,
 } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -23,18 +22,24 @@ export function SmallDevicesMenu({
 }) {
   const { isMenuOpen } = useMenu();
   return (
-    <motion.nav
+    <nav
       id="small-devices-menu"
-      variants={menuVariants}
-      initial="initial"
-      animate={isMenuOpen ? "animate" : "initial"}
       aria-label="Menu de navegação mobile"
       className={cn(
         "-translate-x-1/2 absolute top-[120%] left-1/2 flex h-fit w-[93vw] max-w-5xl flex-col gap-4 rounded-2xl",
         "max-h-[calc(100vh-11.2rem)] sm:max-h-[calc(100vh-6.5rem)]",
       )}
     >
-      <div className="h-fit w-full space-y-2 overflow-y-auto rounded-xl border bg-background p-2">
+      <motion.div
+        variants={menuVariants}
+        initial="initial"
+        animate={isMenuOpen ? "animate" : "initial"}
+        custom={{ initialDelay: 0.1 }}
+        className="h-fit w-full space-y-2 overflow-y-auto rounded-xl border bg-background p-2"
+        style={{
+          willChange: "opacity, transform",
+        }}
+      >
         <motion.div
           id="seguros-menu-content"
           variants={segurosVariants}
@@ -44,6 +49,9 @@ export function SmallDevicesMenu({
             setOpenedOption(openedOption === "seguros" ? null : "seguros");
           }}
           className="flex h-[68px] w-full flex-col items-center gap-2 overflow-hidden rounded-xl"
+          style={{
+            willChange: "height",
+          }}
         >
           <Button
             type="button"
@@ -76,6 +84,9 @@ export function SmallDevicesMenu({
             );
           }}
           className="flex h-[1850px] w-full flex-col gap-2 overflow-hidden rounded-xl"
+          style={{
+            willChange: "height",
+          }}
         >
           <Button
             type="button"
@@ -104,7 +115,7 @@ export function SmallDevicesMenu({
             title="Serviços - Seguros e consórcios Jaber Seguros"
           >
             Serviços
-            <ChevronRightIcon className="-rotate-45 size-6" aria-hidden />
+            <ArrowRightIcon className="-rotate-45 size-6" aria-hidden />
           </Link>
         </div>
         <div className="h-17 w-full rounded-xl bg-foreground/10">
@@ -114,11 +125,20 @@ export function SmallDevicesMenu({
             title="Sobre nós - Conheça a Jaber Seguros"
           >
             Sobre nós
-            <ChevronRightIcon className="-rotate-45 size-6" aria-hidden />
+            <ArrowRightIcon className="-rotate-45 size-6" aria-hidden />
           </Link>
         </div>
-      </div>
-      <div className="flex h-fit w-full justify-end rounded-xl border bg-background px-6 py-4">
+      </motion.div>
+      <motion.div
+        variants={menuVariants}
+        initial="initial"
+        animate={isMenuOpen ? "animate" : "initial"}
+        custom={{ animateDelay: 0.1 }}
+        className="flex h-fit w-full justify-end rounded-xl border bg-background px-6 py-4"
+        style={{
+          willChange: "opacity, transform",
+        }}
+      >
         <Link
           href="/contato"
           className="flex items-center gap-2 font-semibold text-lg"
@@ -129,7 +149,7 @@ export function SmallDevicesMenu({
             <ArrowRightIcon className="-rotate-45 size-6" aria-hidden />
           </Button>
         </Link>
-      </div>
-    </motion.nav>
+      </motion.div>
+    </nav>
   );
 }

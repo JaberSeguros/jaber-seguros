@@ -35,18 +35,20 @@ export const consorciosVariants = {
 };
 
 export const menuVariants = {
-  initial: {
-    clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+  initial: ({ initialDelay }: { initialDelay: number }) => ({
+    opacity: 0,
+    y: 10,
     transition: {
-      duration: 0.5,
-      ease: cubicBezier(0.215, 0.61, 0.355, 1),
+      duration: 0.4,
+      delay: initialDelay,
     },
-  },
-  animate: {
-    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+  }),
+  animate: ({ animateDelay }: { animateDelay: number }) => ({
+    opacity: 1,
+    y: 0,
     transition: {
-      duration: 1,
-      ease: cubicBezier(0.215, 0.61, 0.355, 1),
+      duration: 0.4,
+      delay: animateDelay,
     },
-  },
+  }),
 };
