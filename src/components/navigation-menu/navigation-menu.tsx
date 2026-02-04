@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/a11y/noInteractiveElementToNoninteractiveRole: <because it's a header> */
+/** biome-ignore-all lint/a11y/useSemanticElements: <because it's a header> */
 "use client";
 
 import { ArrowRightIcon } from "lucide-react";
@@ -14,15 +16,24 @@ export function Navigation() {
     "seguros" | "consorcios" | null
   >(null);
   return (
-    <header className="-translate-x-1/2 fixed top-4 left-1/2 z-100 w-[93vw] max-w-5xl rounded-full bg-background pe-3 shadow-md md:pe-4">
+    <header
+      className="-translate-x-1/2 fixed top-4 left-1/2 z-100 w-[93vw] max-w-5xl rounded-full bg-background pe-3 shadow-md md:pe-4"
+      role="banner"
+    >
       <div className="flex items-center justify-between">
-        <Link href="/">
+        <Link
+          href="/"
+          title="Jaber Seguros - Corretora de seguros e consórcios"
+          aria-label="Ir para página inicial - Jaber Seguros"
+        >
           <Image
             src="/assets/logos/jaber.png"
-            alt="Jaber Seguros"
+            alt="Jaber Seguros - Corretora de seguros e consórcios"
             width={125}
             height={65}
             className="h-auto w-[125px]"
+            priority
+            sizes="125px"
           />
         </Link>
         <DesktopNavigation />
@@ -30,17 +41,16 @@ export function Navigation() {
           <Link
             href="/contato"
             className="flex items-center gap-2 font-semibold"
+            title="Fale Conosco - Contato Jaber Seguros"
           >
             Fale Conosco
             <Button className="rounded-full py-5">
-              <ArrowRightIcon className="-rotate-45" />
+              <ArrowRightIcon className="-rotate-45" aria-hidden />
             </Button>
           </Link>
         </div>
         <div className="md:hidden">
-          <MobileNavigation
-            setOpenedOption={setOpenedOption}
-          />
+          <MobileNavigation setOpenedOption={setOpenedOption} />
           <SmallDevicesMenu
             openedOption={openedOption}
             setOpenedOption={setOpenedOption}

@@ -14,6 +14,7 @@ export function MobileNavigation({
   return (
     <div className="relative">
       <Button
+        type="button"
         className="rounded-full py-6 font-bold"
         onClick={() => {
           if (isTransitioning) return;
@@ -24,9 +25,14 @@ export function MobileNavigation({
             setIsTransitioning(false);
           }, 500);
         }}
+        aria-label={
+          isMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"
+        }
+        aria-expanded={isMenuOpen}
+        aria-controls="small-devices-menu"
       >
         {isMenuOpen ? "Fechar" : "Menu"}
-        <MenuIcon className="size-6" />
+        <MenuIcon className="size-6" aria-hidden />
       </Button>
     </div>
   );
