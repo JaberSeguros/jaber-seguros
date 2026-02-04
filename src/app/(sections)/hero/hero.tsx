@@ -8,19 +8,25 @@ import HeroVideo from "./components/hero-video";
 const info = [
   {
     id: 1,
-    Icon: <Briefcase className="size-8 text-primary-foreground lg:size-10" />,
+    Icon: (
+      <Briefcase className="size-6 xs:size-8 text-primary-foreground lg:size-10" />
+    ),
     strong: "+ 15",
     sub: "anos de experiência",
   },
   {
     id: 2,
-    Icon: <Handshake className="size-8 text-primary-foreground lg:size-10" />,
+    Icon: (
+      <Handshake className="size-6 xs:size-8 text-primary-foreground lg:size-10" />
+    ),
     strong: "Parcerias",
     sub: "com as melhores seguradoras",
   },
   {
     id: 3,
-    Icon: <Headset className="size-8 text-primary-foreground lg:size-10" />,
+    Icon: (
+      <Headset className="size-6 xs:size-8 text-primary-foreground lg:size-10" />
+    ),
     strong: "Atendimento",
     sub: "100% personalizado",
   },
@@ -40,19 +46,19 @@ export function Hero() {
           >
             <div className="flex h-[80%] flex-col justify-end gap-4 md:justify-between">
               <div className="max-w-3xl space-y-4 xl:max-w-5xl">
-                <h1 className="font-bold text-[2.35rem] text-primary-foreground leading-tight md:text-5xl md:leading-none xl:text-7xl">
+                <h1 className="font-bold text-3xl text-primary-foreground xs:text-[2.35rem] leading-tight md:text-5xl md:leading-none xl:text-7xl">
                   Proteção e planejamento feitos sob medida para você
                 </h1>
               </div>
               <div className="flex flex-col justify-between gap-10 md:flex-row">
                 <div className="space-y-4">
-                  <p className="max-w-xl text-muted md:text-lg xl:text-2xl">
+                  <p className="max-w-xl text-muted text-sm xs:text-base md:text-lg xl:text-2xl">
                     Seguros e consórcios pensados para o que realmente importa,
                     com atendimento personalizado e parceiros líderes de
                     mercado.
                   </p>
                   <Button
-                    className="cursor-pointer rounded-sm py-7 font-bold"
+                    className="cursor-pointer rounded-sm py-6 xs:py-7 font-bold"
                     asChild
                   >
                     <Link
