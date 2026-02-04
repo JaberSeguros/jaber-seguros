@@ -5,14 +5,15 @@ import {
   imageContainerVariants,
   imageVariants,
 } from "@/app/(sections)/about-us/anime";
-import { cn } from "@/lib/utils";
 
 export function AnimatedImage({
   imageContainerClassName,
   src,
+  alt = "Jaber Seguros",
 }: {
   imageContainerClassName?: string;
   src: string;
+  alt?: string;
 }) {
   const ImageContainerRef = useRef<HTMLDivElement>(null);
 
@@ -36,7 +37,7 @@ export function AnimatedImage({
       >
         <Image
           src={src}
-          alt="Escritório Jaber Seguros"
+          alt={alt}
           fill
           className="size-full object-cover object-center"
         />

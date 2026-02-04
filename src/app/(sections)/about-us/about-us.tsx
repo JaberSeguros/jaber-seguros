@@ -27,7 +27,12 @@ export function AboutUs() {
   const aboutTextRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="mx-auto min-h-screen w-full max-w-[1720px] px-4">
+    <section
+      id="sobre-nos"
+      className="mx-auto min-h-screen w-full max-w-[1720px] px-4"
+      aria-labelledby="about-heading"
+      aria-label="Sobre a Jaber Seguros - Corretora de seguros e consórcios"
+    >
       <div className="flex w-full flex-col gap-10 lg:gap-15">
         <div className="flex w-full flex-col items-start gap-6 lg:flex-row lg:justify-between">
           <div className="flex items-center">
@@ -42,6 +47,7 @@ export function AboutUs() {
           <AnimatedText
             ref={aboutTextRef}
             as="h2"
+            id="about-heading"
             className="max-w-3xl font-bold text-2xl text-muted-foreground lg:text-3xl"
             type="lines"
           >
@@ -56,6 +62,7 @@ export function AboutUs() {
             <AnimatedImage
               imageContainerClassName="aspect-square max-h-[300px] md:max-h-[550px] w-full max-w-3xl overflow-hidden rounded-xl"
               src="/assets/about/about-1.webp"
+              alt="Consultoria Jaber Seguros - Escritório especializado em seguros, consórcios e benefícios"
             />
           </div>
           <div className="flex w-full max-w-4xl items-start gap-4 lg:max-w-lg lg:flex-col lg:gap-6">
@@ -63,13 +70,20 @@ export function AboutUs() {
               <AnimatedImage
                 imageContainerClassName="aspect-square md:aspect-video max-h-[550px] w-full max-w-lg overflow-hidden rounded-xl"
                 src="/assets/about/about-2.webp"
+                alt="Equipe Jaber Seguros - Atendimento personalizado para empresas e pessoas físicas"
               />
             </div>
             <div className="flex h-full w-full max-w-sm flex-col justify-between gap-4">
-              <ul className="space-y-2 md:space-y-3">
+              <ul
+                className="space-y-2 md:space-y-3"
+                aria-label="Áreas de atuação"
+              >
                 {info.map((item) => (
                   <li key={item.id} className="flex items-center gap-2">
-                    <div className="aspect-square size-4 rounded-full bg-primary"></div>
+                    <div
+                      className="aspect-square size-4 rounded-full bg-primary"
+                      aria-hidden
+                    />
                     <p className="text-xs md:text-base lg:text-lg">
                       {item.info}
                     </p>
@@ -81,7 +95,13 @@ export function AboutUs() {
                 className="w-fit py-5 font-bold uppercase"
                 asChild
               >
-                <Link href="/sobre-nos">Saiba mais</Link>
+                <Link
+                  href="/sobre-nos"
+                  title="Saiba mais sobre a Jaber Seguros - Página Sobre nós"
+                  aria-label="Ir para página Sobre nós - Conheça a Jaber Seguros"
+                >
+                  Saiba mais
+                </Link>
               </Button>
             </div>
           </div>

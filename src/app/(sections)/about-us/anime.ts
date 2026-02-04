@@ -19,7 +19,7 @@ export const imageContainerVariants = {
 
 export const imageVariants = {
   initial: {
-    scale: 1.2,
+    scale: 1.1,
     transition: {
       duration: 0.7,
       ease: "easeInOut" as const,

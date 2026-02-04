@@ -10,6 +10,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 export interface AnimatedTextProps {
   children: React.ReactNode;
   className?: string;
+  id?: string;
   as?: "p" | "div" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   scrollTriggerStart?: string;
   /** "words" animates each word; "lines" animates each line. Default: "words" */
@@ -26,6 +27,7 @@ export const AnimatedText = forwardRef<HTMLDivElement, AnimatedTextProps>(
     {
       children,
       className,
+      id,
       as: Component = "p",
       scrollTriggerStart = "top 100%",
       type = "words",
@@ -81,7 +83,7 @@ export const AnimatedText = forwardRef<HTMLDivElement, AnimatedTextProps>(
       >
         {/* Polymorphic Component: ref is HTMLElement at runtime; each tag expects its own ref type */}
         {/* @ts-expect-error RefObject<HTMLElement> not assignable to Ref<HTMLParagraphElement> etc. for dynamic tag */}
-        <Component ref={textRef} className={className}>
+        <Component ref={textRef} className={className} id={id}>
           {children}
         </Component>
       </div>
