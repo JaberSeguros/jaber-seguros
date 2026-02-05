@@ -1,8 +1,8 @@
 import { RiStarFill } from "@remixicon/react";
 import { HandCoins, HeartPulse, Leaf, ShieldCheck } from "lucide-react";
 import { useRef } from "react";
-import { AnimatedImage } from "@/components/animated-image";
 import { AnimatedText } from "@/components/animated-text/animated-text";
+import { AnimatedImage } from "@/components/animted-image/animated-image";
 import { Button } from "@/components/ui/button";
 
 const benefits = [
@@ -46,13 +46,14 @@ export function HealthInsurance() {
                 imageContainerClassName="relative aspect-1/2 max-h-[550px] w-[92vw] overflow-hidden rounded-2xl lg:max-w-[30vw]"
                 src="/assets/serviços/seguros/saude-1.webp"
                 alt="Jaber Seguros - Seguro Saúde"
-              />
-              <div className="-translate-x-1/2 absolute bottom-4 left-1/2 w-full max-w-xs rounded-lg bg-foreground/20 p-2 text-center backdrop-blur-xs lg:max-w-sm">
+                hasAbsoluteContent
+                absoluteContentClassName="-translate-x-1/2 absolute bottom-4 left-1/2 w-full max-w-xs rounded-lg bg-foreground/20 p-2 text-center backdrop-blur-xs lg:max-w-sm"
+              >
                 <p className="font-bold text-primary-foreground md:text-lg">
                   “Ter um bom seguro saúde muda completamente a forma como você
                   cuida da sua vida.”
                 </p>
-              </div>
+              </AnimatedImage>
             </div>
             <div className="flex w-full flex-col">
               <div className="flex items-center gap-2">

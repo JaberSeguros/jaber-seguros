@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import { AnimatedImage } from "@/components/animated-image";
 import { AnimatedText } from "@/components/animated-text/animated-text";
+import { AnimatedImage } from "@/components/animted-image/animated-image";
 import { IntroductionBadge } from "@/components/introduction-badge";
 import { Button } from "@/components/ui/button";
 
