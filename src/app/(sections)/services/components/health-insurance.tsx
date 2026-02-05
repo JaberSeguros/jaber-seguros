@@ -1,5 +1,6 @@
 import { RiStarFill } from "@remixicon/react";
 import { HandCoins, HeartPulse, Leaf, ShieldCheck } from "lucide-react";
+  import Link from "next/link";
 import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { AnimatedImage } from "@/components/animted-image/animated-image";
@@ -31,13 +32,23 @@ const benefits = [
 export function HealthInsurance() {
   const textRef = useRef<HTMLDivElement>(null);
   return (
-    <div className="min-h-screen w-full">
+    <section
+      id="seguro-saude"
+      className="min-h-screen w-full"
+      aria-labelledby="health-insurance-title"
+      aria-label="Seguro Saúde - Planos e benefícios Jaber Seguros"
+    >
       <div className="flex w-full flex-col gap-10 lg:gap-15">
         <div className="flex justify-between gap-4 bg-foreground px-2 py-4 text-primary-foreground">
-          <h3 className="font-bold text-lg md:text-xl lg:text-5xl">
+          <h2
+            id="health-insurance-title"
+            className="font-bold text-lg md:text-xl lg:text-5xl"
+          >
             Seguro Saúde
-          </h3>
-          <p className="text-muted text-sm md:text-base">[01/06]</p>
+          </h2>
+          <p className="text-muted text-sm md:text-base" aria-hidden>
+            [01/06]
+          </p>
         </div>
         <div className="flex h-fit w-full flex-col-reverse gap-8 lg:flex-row lg:gap-10">
           <div className="mx-auto flex w-fit flex-col gap-8">
@@ -45,7 +56,7 @@ export function HealthInsurance() {
               <AnimatedImage
                 imageContainerClassName="relative aspect-1/2 max-h-[550px] w-[92vw] overflow-hidden rounded-2xl lg:max-w-[30vw]"
                 src="/assets/serviços/seguros/saude-1.webp"
-                alt="Jaber Seguros - Seguro Saúde"
+                alt="Seguro Saúde Jaber Seguros - Cuidar da sua vida com tranquilidade e qualidade"
                 hasAbsoluteContent
                 absoluteContentClassName="-translate-x-1/2 absolute bottom-4 left-1/2 w-full max-w-xs rounded-lg bg-foreground/20 p-2 text-center backdrop-blur-xs lg:max-w-sm"
               >
@@ -57,7 +68,7 @@ export function HealthInsurance() {
             </div>
             <div className="flex w-full flex-col">
               <div className="flex items-center gap-2">
-                <RiStarFill className="size-5 text-yellow-500 md:size-10" />
+                <RiStarFill className="size-5 text-yellow-500 md:size-10" aria-hidden />
                 <p className="font-medium text-sm md:text-lg lg:text-3xl">
                   5.0
                 </p>
@@ -83,7 +94,7 @@ export function HealthInsurance() {
               <AnimatedImage
                 imageContainerClassName="relative aspect-2/3 max-h-[350px] w-[92vw] overflow-hidden rounded-2xl lg:max-h-[500px] lg:max-w-[25vw]"
                 src="/assets/serviços/seguros/saude-2.webp"
-                alt="Jaber Seguros - Seguro Saúde"
+                alt="Planos de saúde Jaber Seguros - Principais operadoras com suporte humanizado"
               />
               <div className="flex h-full w-full flex-col items-end justify-between gap-6">
                 <div className="flex w-full flex-col gap-4 rounded-lg border bg-primary/5 p-2 lg:flex-row lg:items-start lg:justify-between">
@@ -91,18 +102,27 @@ export function HealthInsurance() {
                     Conte com planos das principais operadoras do mercado, com
                     suporte humano do início ao fim.
                   </p>
-                  <Button className="cursor-pointer rounded-sm py-6 font-bold">
-                    Saiba Mais
+                  <Button
+                    className="cursor-pointer rounded-sm py-6 font-bold"
+                    asChild
+                  >
+                    <Link
+                      href="/servicos/seguro-saude"
+                      title="Saiba mais sobre Seguro Saúde - Jaber Seguros"
+                      aria-label="Ir para página Seguro Saúde - Planos e cotação"
+                    >
+                      Saiba Mais
+                    </Link>
                   </Button>
                 </div>
                 <div className="w-full rounded-2xl border bg-amber-200 p-6 lg:w-[90%]">
                   <div className="flex w-full flex-col gap-15">
-                    <p className="font-bold text-xl">
+                    <p id="benefits-heading" className="font-bold text-xl">
                       Por que contratar um Seguro Saúde?
                     </p>
-                    <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+                    <ul className="grid w-full list-none grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
                       {benefits.map((benefit) => (
-                        <div
+                        <li
                           key={benefit.id}
                           className="flex items-center gap-2"
                         >
@@ -115,9 +135,9 @@ export function HealthInsurance() {
                           <p className="font-semibold text-sm xl:text-base">
                             {benefit.benefit}
                           </p>
-                        </div>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -125,6 +145,6 @@ export function HealthInsurance() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
