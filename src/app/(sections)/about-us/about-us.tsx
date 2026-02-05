@@ -4,9 +4,8 @@ import Link from "next/link";
 import { useRef } from "react";
 import { AnimatedImage } from "@/components/animated-image";
 import { AnimatedText } from "@/components/animated-text/animated-text";
-import { Badge } from "@/components/ui/badge";
+import { IntroductionBadge } from "@/components/introduction-badge";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 
 const info = [
   {
@@ -35,15 +34,7 @@ export function AboutUs() {
     >
       <div className="flex w-full flex-col gap-10 lg:gap-15">
         <div className="flex w-full flex-col items-start gap-6 lg:flex-row lg:justify-between">
-          <div className="flex items-center">
-            <Separator />
-            <Badge
-              variant="outline"
-              className="font-semibold text-base lg:text-lg"
-            >
-              Sobre nós
-            </Badge>
-          </div>
+          <IntroductionBadge text="Sobre nós" />
           <AnimatedText
             ref={aboutTextRef}
             as="h2"
