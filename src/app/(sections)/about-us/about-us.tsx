@@ -92,7 +92,7 @@ export function AboutUs() {
               </ul>
               <Button
                 variant="outline"
-                className="w-fit py-5 font-bold uppercase"
+                className="w-fit py-5 font-bold text-primary uppercase"
                 asChild
               >
                 <Link
