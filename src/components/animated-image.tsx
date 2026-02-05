@@ -28,12 +28,18 @@ export function AnimatedImage({
       initial="initial"
       animate={isInVIew ? "animate" : "initial"}
       className={imageContainerClassName}
+      style={{
+        willChange: "clip-path",
+      }}
     >
       <motion.div
         variants={imageVariants}
         initial="initial"
         animate={isInVIew ? "animate" : "initial"}
         className="relative size-full"
+        style={{
+          willChange: "scale",
+        }}
       >
         <Image
           src={src}

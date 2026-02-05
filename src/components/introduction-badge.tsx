@@ -4,7 +4,7 @@ import { Separator } from "./ui/separator";
 export function IntroductionBadge({ text }: { text: string }) {
   return (
     <div className="flex items-center">
-      <Separator />
+      <Separator className="max-w-15" />
       <Badge variant="outline" className="font-semibold text-base lg:text-lg">
         {text}
       </Badge>
