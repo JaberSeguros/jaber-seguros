@@ -112,7 +112,7 @@ export function EnterpriseHealth() {
                 </div>
               </div>
             </AnimatedImage>
-            <ol className="flex w-full list-none flex-col gap-6 xl:w-3xl">
+            <ol className="flex w-full list-none flex-col gap-6 xl:w-[44rem]">
               {solutions.map((solution) => (
                 <li
                   key={solution.id}
