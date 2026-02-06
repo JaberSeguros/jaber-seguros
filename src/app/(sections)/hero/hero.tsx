@@ -62,7 +62,7 @@ export function Hero() {
                     asChild
                   >
                     <Link
-                      href="https://wa.me/5511999999999"
+                      href="https://wa.me/5511993101907"
                       target="_blank"
                       rel="noopener noreferrer"
                       title="Fale conosco no WhatsApp - Jaber Seguros"
