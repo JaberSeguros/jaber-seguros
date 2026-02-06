@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { IntroductionBadge } from "@/components/introduction-badge";
+import { BigVehiclesConsortium } from "./components/big-vehicles-consortium";
 import { EnterpriseHealth } from "./components/enterprise-health";
 import { HealthInsurance } from "./components/health-insurance";
 
@@ -26,6 +27,7 @@ export function Services() {
         </div>
         <HealthInsurance />
         <EnterpriseHealth />
+        <BigVehiclesConsortium />
       </div>
     </section>
   );

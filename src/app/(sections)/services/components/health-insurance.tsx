@@ -1,5 +1,6 @@
 import { RiStarFill } from "@remixicon/react";
 import { HandCoins, HeartPulse, Leaf, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
@@ -39,13 +40,18 @@ export function HealthInsurance() {
       aria-label="Seguro Saúde - Planos e benefícios Jaber Seguros"
     >
       <div className="flex w-full flex-col gap-10 lg:gap-15">
-        <div className="mx-auto w-fit rounded-lg border border-primary/30 bg-primary/20 p-2 lg:rounded-2xl lg:p-4">
-          <h2
-            id="health-insurance-title"
-            className="font-bold text-lg md:text-xl lg:text-4xl"
-          >
+        <div className="flex items-center gap-2">
+          <div className="relative aspect-square size-18 opacity-50 grayscale-75 sm:size-20">
+            <Image
+              src="/assets/logos/logo-only.png"
+              alt="Seguro Saúde"
+              width={80}
+              height={80}
+            />
+          </div>
+          <p className="rounded-full border border-primary/15 bg-primary/10 p-1.5 font-bold sm:text-lg md:text-xl lg:text-2xl">
             Seguro Saúde
-          </h2>
+          </p>
         </div>
         <div className="flex h-fit w-full flex-col-reverse gap-8 lg:flex-row lg:gap-10">
           <div className="mx-auto flex w-fit flex-col gap-8">
