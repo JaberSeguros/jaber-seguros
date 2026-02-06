@@ -1,6 +1,6 @@
 import { RiStarFill } from "@remixicon/react";
 import { HandCoins, HeartPulse, Leaf, ShieldCheck } from "lucide-react";
-  import Link from "next/link";
+import Link from "next/link";
 import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { AnimatedImage } from "@/components/animted-image/animated-image";
@@ -39,16 +39,13 @@ export function HealthInsurance() {
       aria-label="Seguro Saúde - Planos e benefícios Jaber Seguros"
     >
       <div className="flex w-full flex-col gap-10 lg:gap-15">
-        <div className="flex justify-between gap-4 bg-foreground px-2 py-4 text-primary-foreground">
+        <div className="mx-auto w-fit rounded-lg border border-primary/30 bg-primary/20 p-2 lg:rounded-2xl lg:p-4">
           <h2
             id="health-insurance-title"
-            className="font-bold text-lg md:text-xl lg:text-5xl"
+            className="font-bold text-lg md:text-xl lg:text-4xl"
           >
             Seguro Saúde
           </h2>
-          <p className="text-muted text-sm md:text-base" aria-hidden>
-            [01/06]
-          </p>
         </div>
         <div className="flex h-fit w-full flex-col-reverse gap-8 lg:flex-row lg:gap-10">
           <div className="mx-auto flex w-fit flex-col gap-8">
@@ -68,7 +65,10 @@ export function HealthInsurance() {
             </div>
             <div className="flex w-full flex-col">
               <div className="flex items-center gap-2">
-                <RiStarFill className="size-5 text-yellow-500 md:size-10" aria-hidden />
+                <RiStarFill
+                  className="size-5 text-yellow-500 md:size-10"
+                  aria-hidden
+                />
                 <p className="font-medium text-sm md:text-lg lg:text-3xl">
                   5.0
                 </p>
@@ -97,7 +97,7 @@ export function HealthInsurance() {
                 alt="Planos de saúde Jaber Seguros - Principais operadoras com suporte humanizado"
               />
               <div className="flex h-full w-full flex-col items-end justify-between gap-6">
-                <div className="flex w-full flex-col gap-4 rounded-lg border bg-primary/5 p-2 lg:flex-row lg:items-start lg:justify-between">
+                <div className="flex w-full flex-col gap-4 rounded-lg border border-border/50 p-2 lg:flex-row lg:items-start lg:justify-between">
                   <p className="max-w-sm md:text-lg">
                     Conte com planos das principais operadoras do mercado, com
                     suporte humano do início ao fim.
@@ -115,9 +115,12 @@ export function HealthInsurance() {
                     </Link>
                   </Button>
                 </div>
-                <div className="w-full rounded-2xl border bg-amber-200 p-6 lg:w-[90%]">
+                <div className="w-full rounded-2xl border bg-chart-5 p-6 lg:w-[90%]">
                   <div className="flex w-full flex-col gap-15">
-                    <p id="benefits-heading" className="font-bold text-xl">
+                    <p
+                      id="benefits-heading"
+                      className="font-bold text-primary-foreground text-xl"
+                    >
                       Por que contratar um Seguro Saúde?
                     </p>
                     <ul className="grid w-full list-none grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
@@ -132,7 +135,7 @@ export function HealthInsurance() {
                           >
                             {benefit.Icon}
                           </div>
-                          <p className="font-semibold text-sm xl:text-base">
+                          <p className="font-semibold text-muted text-sm xl:text-base">
                             {benefit.benefit}
                           </p>
                         </li>
