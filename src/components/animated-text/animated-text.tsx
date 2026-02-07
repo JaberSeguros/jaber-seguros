@@ -29,7 +29,7 @@ export const AnimatedText = forwardRef<HTMLDivElement, AnimatedTextProps>(
       className,
       id,
       as: Component = "p",
-      scrollTriggerStart = "top 100%",
+      scrollTriggerStart = "top 85%",
       type = "words",
     },
     ref,
