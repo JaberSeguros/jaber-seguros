@@ -28,7 +28,7 @@ export function MenuContentCard({ content }: MenuContentCardProps) {
       aria-labelledby={`card-title-${content.id}`}
     >
       <CardHeader>
-        <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+        <div className="relative aspect-video w-full overflow-hidden rounded-sm">
           <Image
             src={content.image}
             alt={`${content.type} - ${content.headline}. ${content.sub}`}

@@ -17,13 +17,41 @@ export const seguros = [
     cta: "Conheça os planos",
     href: "/servicos/seguro-vida-empresarial",
   },
+  {
+    id: 3,
+    type: "Seguro Empresarial",
+    image: "/assets/serviços/seguros/empresarial.webp",
+    headline: "Proteção completa para o seu negócio",
+    sub:
+      "Cobertura sob medida para proteger patrimônio, operações e continuidade da empresa.",
+    cta: "Conheça os planos",
+    href: "/servicos/seguro-empresarial",
+  },
+  {
+    id: 4,
+    type: "Seguro Garantia",
+    image: "/assets/serviços/seguros/garantia.webp",
+    headline: "Mais segurança em contratos e obras",
+    sub: "Garante o cumprimento de obrigações contratuais com credibilidade e agilidade.",
+    cta: "Conheça os planos",
+    href: "/servicos/seguro-garantia",
+  },
+  {
+    id: 5,
+    type: "Seguro Responsabilidade Civil",
+    image: "/assets/serviços/seguros/responsabilidade-civil.webp",
+    headline: "Tranquilidade frente a imprevistos",
+    sub: "Proteção contra danos causados a terceiros no exercício da atividade profissional.",
+    cta: "Conheça os planos",
+    href: "/servicos/seguro-responsabilidade-civil",
+  },
 ];
 
 export const consorcios = [
   {
     id: 1,
     type: "Veículos Pesados",
-    image: "/assets/serviços/consorcios/veiculo-pesado-2.webp",
+    image: "/assets/serviços/consorcios/veiculo-pesado-4.webp",
     headline: "Força para grandes conquistas",
     sub: "Consórcio para máquinas e veículos pesados, com planejamento e segurança.",
     cta: "Conheça os planos",

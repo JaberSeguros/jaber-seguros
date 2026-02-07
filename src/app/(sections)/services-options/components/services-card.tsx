@@ -53,7 +53,7 @@ export function ServicesCard({
             alt={alt}
             fill
             className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes="(max-width: 768px) 100vw, 1500px"
           />
           <div className="absolute top-4 left-4 w-fit flex-center rounded-lg p-2 backdrop-blur-sm backdrop-brightness-50">
             <Badge

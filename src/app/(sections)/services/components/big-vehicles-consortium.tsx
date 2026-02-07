@@ -96,7 +96,7 @@ export function BigVehiclesConsortium() {
           >
             <Image
               src="/assets/logos/logo-only.png"
-              alt=""
+              alt="Consórcio para veículos pesados - Jaber Seguros"
               width={80}
               height={80}
             />
@@ -206,6 +206,7 @@ export function BigVehiclesConsortium() {
                       alt={image.alt}
                       fill
                       className="size-full object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 1500px"
                     />
                     <div className="-translate-x-1/2 absolute bottom-2 left-1/2 w-[92%] max-w-xl rounded-lg bg-primary/40 p-6 backdrop-blur-xs backdrop-brightness-75">
                       <div className="flex flex-col gap-8">

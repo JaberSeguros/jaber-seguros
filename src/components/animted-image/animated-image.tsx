@@ -54,6 +54,7 @@ export function AnimatedImage({
           alt={alt}
           fill
           className="size-full object-cover object-center"
+          sizes="(max-width: 768px) 100vw, 1500px"
         />
       </motion.div>
       {hasAbsoluteContent && (
