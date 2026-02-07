@@ -1,0 +1,100 @@
+export const services = [
+  {
+    id: 1,
+    type: "Seguros",
+    src: "/assets/serviços/seguros/saude.webp",
+    alt: "Seguro Saúde",
+    title: "Seguro Saúde",
+    sub: "Proteção para quem mais importa",
+    description: "Planos de saúde acessíveis e sem burocracia.",
+    href: "/servicos/seguro-saude",
+  },
+  {
+    id: 2,
+    type: "Seguros",
+    src: "/assets/serviços/seguros/vida.webp",
+    alt: "Seguro Vida Empresarial",
+    title: "Seguro Vida Empresarial",
+    sub: "Proteja quem faz sua empresa acontecer",
+    description:
+      "Seguro de vida empresarial com cobertura abrangente e customizada.",
+    href: "/servicos/seguro-vida-empresarial",
+  },
+  {
+    id: 3,
+    type: "Seguros",
+    src: "/assets/serviços/seguros/empresarial.webp",
+    alt: "Seguro Empresarial",
+    title: "Seguro Empresarial",
+    sub: "Proteção completa para o seu negócio",
+    description:
+      "Cobertura sob medida para proteger patrimônio, operações e continuidade da empresa.",
+    href: "/servicos/seguro-empresarial",
+  },
+  {
+    id: 4,
+    type: "Seguros",
+    src: "/assets/serviços/seguros/garantia.webp",
+    alt: "Seguro Garantia",
+    title: "Seguro Garantia",
+    sub: "Mais segurança em contratos e obras",
+    description:
+      "Garante o cumprimento de obrigações contratuais com credibilidade e agilidade.",
+    href: "/servicos/seguro-garantia",
+  },
+  {
+    id: 5,
+    type: "Seguros",
+    src: "/assets/serviços/seguros/responsabilidade-civil.webp",
+    alt: "Seguro de Responsabilidade Civil",
+    title: "Responsabilidade Civil",
+    sub: "Tranquilidade frente a imprevistos",
+    description:
+      "Proteção contra danos causados a terceiros no exercício da atividade profissional.",
+    href: "/servicos/seguro-responsabilidade-civil",
+  },
+  {
+    id: 6,
+    type: "Consórcios",
+    src: "/assets/serviços/consorcios/veiculo.webp",
+    alt: "Veículos",
+    title: "Veículos",
+    sub: "Seu próximo veículo, sem juros",
+    description:
+      "Planeje a compra do seu carro ou moto com parcelas que cabem no bolso.",
+    href: "/servicos/veiculo",
+  },
+  {
+    id: 7,
+    type: "Consórcios",
+    src: "/assets/serviços/consorcios/imovel-3.webp",
+    alt: "Imóvel",
+    title: "Imóvel",
+    sub: "O caminho seguro para seu imóvel",
+    description:
+      "Conquiste sua casa ou investimento imobiliário com planejamento e segurança.",
+    href: "/servicos/imovel",
+  },
+  {
+    id: 8,
+    type: "Consórcios",
+    src: "/assets/serviços/consorcios/sustentavel-4.webp",
+    alt: "Sustentável",
+    title: "Sustentável",
+    sub: "Invista no futuro com economia",
+    description:
+      "Consórcio para energia solar e soluções sustentáveis, sem juros.",
+    href: "/servicos/sustentavel",
+  },
+  {
+    id: 9,
+    type: "Consórcios",
+    src: "/assets/serviços/consorcios/veiculo-pesado-6.webp",
+    alt: "Veículos Pesados",
+    title: "Veículos Pesados",
+    sub: "Força para grandes conquistas",
+    description:
+      "Consórcio para máquinas e veículos pesados, com planejamento e segurança.",
+    href: "/servicos/veiculo-pesado",
+  },
+];

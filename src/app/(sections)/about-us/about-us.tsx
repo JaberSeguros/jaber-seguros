@@ -28,7 +28,7 @@ export function AboutUs() {
   return (
     <section
       id="sobre-nos"
-      className="mx-auto min-h-screen w-full max-w-[1570px] px-4"
+      className="mx-auto min-h-screen w-full max-w-7xl px-4"
       aria-labelledby="about-heading"
       aria-label="Sobre a Jaber Seguros - Corretora de seguros e consórcios"
     >

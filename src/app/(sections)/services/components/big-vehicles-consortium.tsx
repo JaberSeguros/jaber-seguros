@@ -84,7 +84,7 @@ export function BigVehiclesConsortium() {
   return (
     <section
       id="consorcio-veiculos-pesados"
-      className="mb-20 min-h-screen w-full"
+      className="min-h-screen w-full"
       aria-labelledby="big-vehicles-consortium-title"
       aria-label="Consórcio para veículos pesados - Planos e benefícios Jaber Seguros"
     >

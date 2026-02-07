@@ -19,7 +19,7 @@ export function Navigation() {
   const { setIsMenuOpen } = useMenu();
   return (
     <header
-      className="-translate-x-1/2 fixed top-4 left-1/2 z-100 w-[93vw] max-w-5xl rounded-full bg-background pe-3 shadow-md md:pe-4"
+      className="-translate-x-1/2 fixed top-4 left-1/2 z-100 w-[93vw] max-w-5xl rounded-full bg-background pe-3 shadow-xs md:pe-4"
       role="banner"
     >
       <div className="flex items-center justify-between">
