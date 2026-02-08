@@ -35,13 +35,13 @@ export function LogoCloudDemo() {
             Confiança, Segurança e Qualidade.
           </span>
         </h2>
-        <div className="mx-auto mt-10 grid h-fit w-full grid-cols-2 gap-4 px-4 lg:grid-cols-3 lg:gap-6">
+        <div className="mx-auto mt-10 grid h-fit w-full grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {partnerLogos.map((partner) => (
             <div
               key={partner.id}
               className={cn(
-                "group relative aspect-video max-h-[260px] w-full cursor-default overflow-hidden rounded-lg bg-border/50 p-4 transition-colors duration-300 hover:bg-border lg:p-6",
-                partner.id === 7 && "col-span-2 lg:col-span-3",
+                "group relative aspect-video max-h-[120px] w-full cursor-default overflow-hidden rounded-lg bg-foreground/20 p-4 transition-colors duration-300 hover:bg-border md:max-h-[260px] lg:p-6",
+                partner.id === 7 && "md:col-span-2 lg:col-span-3",
               )}
             >
               <div className="flex size-full justify-between">
@@ -51,8 +51,8 @@ export function LogoCloudDemo() {
                 <div className="-translate-x-1/2 absolute bottom-0 left-1/2 w-fit">
                   <div
                     className={cn(
-                      "relative aspect-square w-20 flex-center grayscale-85 transition-all duration-300 group-hover:grayscale-0 sm:w-35",
-                      partner.id === 7 && "w-55 sm:w-55 lg:w-65",
+                      "relative aspect-square w-22 flex-center transition-all duration-300 group-hover:grayscale-0 sm:w-35 md:grayscale-85",
+                      partner.id === 7 && "w-27 md:w-55 lg:w-65",
                     )}
                   >
                     <Image

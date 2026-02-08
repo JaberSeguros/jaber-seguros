@@ -55,7 +55,7 @@ export function ServicesCard({
             className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 1500px"
           />
-          <div className="absolute top-4 left-4 w-fit flex-center rounded-lg p-2 backdrop-blur-sm backdrop-brightness-50">
+          <div className="absolute bottom-4 left-4 w-fit flex-center rounded-lg p-2 backdrop-blur-sm backdrop-brightness-50">
             <Badge
               variant="ghost"
               className="text-primary-foreground md:text-base"

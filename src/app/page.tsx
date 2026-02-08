@@ -1,6 +1,7 @@
 import { LogoCloudDemo } from "@/components/ui/logo-cloud-demo";
 import { AboutUs } from "./(sections)/about-us/about-us";
 import { Hero } from "./(sections)/hero/hero";
+import { JaberEssence } from "./(sections)/jaber-essence/jaber-essence";
 import { ServicesOptions } from "./(sections)/services-options/services-options";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <LogoCloudDemo />
       </div>
       <ServicesOptions />
+      <JaberEssence />
     </div>
   );
 }

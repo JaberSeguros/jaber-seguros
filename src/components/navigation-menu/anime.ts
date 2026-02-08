@@ -9,7 +9,7 @@ export const segurosVariants = {
     },
   },
   animate: {
-    height: "935px",
+    height: "2260px",
     transition: {
       duration: 1,
       ease: cubicBezier(0.215, 0.61, 0.355, 1),
