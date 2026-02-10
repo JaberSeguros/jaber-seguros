@@ -87,7 +87,7 @@ export function JaberEssence() {
       <div className="flex w-full flex-col-reverse bmb:gap-10 gap-6 md:flex-row">
         <div className="gap flex w-full bmb:max-w-[21rem] flex-col justify-between gap-10 lg:max-w-md">
           <div className="space-y-4">
-            <p className="text-foreground/80 uppercase">A essência da Jaber</p>
+            <p className="uppercase">A essência da Jaber</p>
             <h2
               id={SECTION_HEADING_ID}
               className="font-bold text-3xl lg:text-4xl"

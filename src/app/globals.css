@@ -9,6 +9,32 @@
   --breakpoint-2xl: 1400px;
 }
 
+/* CTA marquee + fade-in-up animations (Tailwind 4) */
+@theme {
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  --animate-marquee-vertical: marquee-vertical var(--duration, 30s) linear
+    infinite;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  --animate-fade-in-up: fade-in-up 0.5s ease-out;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
