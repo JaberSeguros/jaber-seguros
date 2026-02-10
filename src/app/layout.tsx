@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navigation } from "@/components/navigation-menu/navigation-menu";
 import { MenuProvider } from "@/contexts/menu-context";
+import { Footer } from "./(sections)/footer/footer";
 
 export const metadata: Metadata = {
   title: "Jaber Seguros",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <MenuProvider>
           <Navigation />
           {children}
+          <Footer />
         </MenuProvider>
       </body>
     </html>
