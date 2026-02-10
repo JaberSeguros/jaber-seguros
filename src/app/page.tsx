@@ -4,6 +4,7 @@ import { Hero } from "./(sections)/hero/hero";
 import { JaberEssence } from "./(sections)/jaber-essence/jaber-essence";
 import { Message } from "./(sections)/message/message";
 import { ServicesOptions } from "./(sections)/services-options/services-options";
+import { Vision } from "./(sections)/vision/vision";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ServicesOptions />
       <JaberEssence />
       <Message />
+      <Vision />
     </div>
   );
 }

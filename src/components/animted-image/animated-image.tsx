@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
@@ -10,6 +12,7 @@ import {
 
 export function AnimatedImage({
   imageContainerClassName,
+  imageClassName,
   src,
   alt = "Jaber Seguros",
   children,
@@ -17,6 +20,7 @@ export function AnimatedImage({
   absoluteContentClassName,
 }: {
   imageContainerClassName?: string;
+  imageClassName?: string;
   src: string;
   alt?: string;
   children?: React.ReactNode;
@@ -53,7 +57,9 @@ export function AnimatedImage({
           src={src}
           alt={alt}
           fill
-          className="size-full object-cover object-center"
+          className={cn(
+            imageClassName ?? "size-full object-cover object-center",
+          )}
           sizes="(max-width: 768px) 100vw, 1500px"
         />
       </motion.div>
