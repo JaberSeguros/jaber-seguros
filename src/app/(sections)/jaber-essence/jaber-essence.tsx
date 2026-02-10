@@ -14,7 +14,7 @@ const items = [
     title: "Consultoria que entende você",
     description:
       "Antes de qualquer proposta, ouvimos. Entendemos seu momento, suas prioridades e seus objetivos para indicar apenas o que faz sentido.",
-    image: "/assets/variadas/essence.webp",
+    image: "/assets/variadas/essence-2.webp",
     imageAlt:
       "Consultoria de seguros Jaber: equipe que entende seu momento e prioridades para indicar o que faz sentido.",
   },
@@ -23,7 +23,7 @@ const items = [
     title: "Planos sob medida, sem complicação",
     description:
       "Seguro saúde e consórcios personalizados, com opções das principais seguradoras e administradoras do mercado.",
-    image: "/assets/variadas/essence-2.webp",
+    image: "/assets/variadas/essence.webp",
     imageAlt:
       "Planos de seguro saúde e consórcios personalizados pelas principais seguradoras do mercado.",
   },
