@@ -40,7 +40,7 @@ export function LogoCloudDemo() {
             <div
               key={partner.id}
               className={cn(
-                "group relative aspect-video max-h-[120px] w-full cursor-default overflow-hidden rounded-lg border-t-2 border-b-2 p-4 transition-colors duration-300 hover:bg-border md:max-h-[260px] lg:p-6",
+                "group relative aspect-video max-h-[120px] w-full cursor-default overflow-hidden rounded-lg border-primary/20 border-t-2 border-b-2 p-4 transition-colors duration-300 hover:bg-primary/10 md:max-h-[260px] lg:p-6",
               )}
             >
               <div className="flex size-full justify-center">
