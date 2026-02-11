@@ -39,7 +39,7 @@ export default function ServicosPage() {
           sizes="(max-width: 768px) 100vw, 1500px"
         />
       </div>
-      <div className="mx-auto w-full max-w-[85rem] space-y-20 overflow-hidden px-4 md:space-y-32 lg:space-y-40">
+      <div className="mx-auto w-full max-w-[85rem] space-y-20 overflow-hidden md:space-y-32 lg:space-y-40">
         <Services />
       </div>
     </section>
