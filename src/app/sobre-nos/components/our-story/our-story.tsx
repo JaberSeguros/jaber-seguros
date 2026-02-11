@@ -61,16 +61,25 @@ const numbers = [
 
 export function OurStory() {
   return (
-    <div className="w-full space-y-15 lg:space-y-35">
+    <article
+      className="w-full space-y-15 lg:space-y-35"
+      aria-labelledby="our-story-heading"
+    >
       <div className="flex w-full flex-col justify-between gap-8 lg:flex-row">
-        <div className="max-w-xl space-y-4">
-          <p className="animate-fade-up uppercase [animation-delay:600ms]">
+        <header className="max-w-xl space-y-4">
+          <p
+            className="animate-fade-up uppercase [animation-delay:600ms]"
+            aria-hidden
+          >
             Nossa História
           </p>
-          <h2 className="animate-fade-up font-medium text-3xl text-foreground leading-tight tracking-tight [animation-delay:800ms] lg:text-4xl">
+          <h2
+            id="our-story-heading"
+            className="animate-fade-up font-medium text-3xl text-foreground leading-tight tracking-tight [animation-delay:800ms] lg:text-4xl"
+          >
             Proteção construída com confiança e experiência
           </h2>
-        </div>
+        </header>
         <div className="space-y-4">
           {paragraphs.map((paragraph) => (
             <AnimatedParagraph
@@ -82,17 +91,23 @@ export function OurStory() {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:grid-cols-4">
+      <section
+        className="grid grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:grid-cols-4"
+        aria-labelledby="our-story-stats-heading"
+      >
+        <h3 id="our-story-stats-heading" className="sr-only">
+          Números que refletem nossa trajetória
+        </h3>
         {numbers.map((number) => (
           <div key={number.id} className="flex flex-col items-center gap-3">
             <div className="flex items-center gap-1 font-bold text-[2.7rem] md:text-5xl xl:text-6xl">
-              <span>{number.prefix}</span>
+              <span aria-hidden>{number.prefix}</span>
               <NumberTicker className="" value={number.value} />
             </div>
             <p className="text-foreground/90">{number.sub}</p>
           </div>
         ))}
-      </div>
-    </div>
+      </section>
+    </article>
   );
 }
