@@ -146,7 +146,7 @@ export function EnterpriseHealth() {
             </ol>
           </div>
           <div className="mx-auto aspect-video max-h-[330px] w-full max-w-3xl flex-center rounded-2xl border bg-primary/15">
-            <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-col items-center gap-8 p-6">
               <div className="relative size-24">
                 <Image
                   src="/assets/icons/gesture.png"
@@ -156,7 +156,7 @@ export function EnterpriseHealth() {
                   sizes="400px"
                 />
               </div>
-              <p className="font-bold text-lg md:text-xl xl:text-2xl">
+              <p className="text-center font-bold text-lg md:text-xl xl:text-2xl">
                 Um gesto simples, um impacto gigante.
               </p>
               <Button asChild className="rounded-full bg-black py-5 font-bold">
