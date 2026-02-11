@@ -17,25 +17,19 @@ export default function ServicosPage() {
       aria-label="Página de Serviços - Seguros e Consórcios Jaber Seguros"
     >
       <div className="mx-auto flex w-fit flex-col items-center gap-8">
-        <div className="flex items-center gap-4">
-          <div
-            className="size-1.5 rounded-full bg-foreground"
-            aria-hidden
-          />
+        <div className="flex animate-fade-up items-center gap-4">
+          <div className="size-1.5 rounded-full bg-foreground" aria-hidden />
           <p className="font-bold text-foreground/80 text-lg">Serviços</p>
-          <div
-            className="size-1.5 rounded-full bg-foreground"
-            aria-hidden
-          />
+          <div className="size-1.5 rounded-full bg-foreground" aria-hidden />
         </div>
         <h1
           id="servicos-page-heading"
-          className="max-w-[15rem] text-center font-bold text-3xl leading-tight md:max-w-sm md:text-5xl lg:max-w-xl lg:text-6xl"
+          className="max-w-[15rem] animate-fade-up text-center font-bold text-3xl leading-tight [animation-delay:200ms] md:max-w-sm md:text-5xl lg:max-w-xl lg:text-6xl"
         >
           Soluções que Protegem Você
         </h1>
       </div>
-      <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+      <div className="relative aspect-video w-full animate-fade-up overflow-hidden rounded-lg [animation-delay:400ms]">
         <Image
           src="/assets/variadas/pexels-cottonbro-4568711.jpg"
           alt="Soluções em seguros e consórcios - Jaber Seguros protege você e sua empresa"
