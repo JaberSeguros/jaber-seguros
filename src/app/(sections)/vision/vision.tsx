@@ -34,7 +34,7 @@ export function Vision() {
           </h2>
           <div className="grid bmb:grid-cols-2 grid-cols-1 gap-6">
             {paragraphs.map((paragraph) => (
-              <AnimatedParagraph key={paragraph.id}>
+              <AnimatedParagraph key={paragraph.id} className="text-foreground/90 md:text-lg lg:max-w-xs xl:max-w-sm">
                 {paragraph.content}
               </AnimatedParagraph>
             ))}
