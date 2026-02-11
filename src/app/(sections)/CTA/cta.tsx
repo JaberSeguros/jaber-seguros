@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { PeopleIcon } from "@/components/icons/people";
 import { Button } from "@/components/ui/button";
 
 export function CTA() {
@@ -7,7 +7,15 @@ export function CTA() {
     <section className="mx-auto w-full max-w-7xl px-4">
       <div className="h-fit w-full rounded-lg bg-primary/20 px-4 py-12 lg:px-12 lg:py-24">
         <div className="mx-auto flex w-fit flex-col items-center gap-6">
-          <PeopleIcon size={64} />
+          <div className="relative size-24">
+            <Image
+              src="/assets/icons/protection.png"
+              alt="Protection"
+              fill
+              className="object-cover object-center"
+              sizes="400px"
+            />
+          </div>
           <h2 className="text-center font-bold text-2xl lg:text-3xl">
             Proteção que faz sentido pra você
           </h2>

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { AnimatedImage } from "@/components/animted-image/animated-image";
 import { ChartExample } from "@/components/chart";
-import { LikeIcon } from "@/components/icons/like-icon";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -148,9 +147,15 @@ export function EnterpriseHealth() {
           </div>
           <div className="mx-auto aspect-video max-h-[330px] w-full max-w-3xl flex-center rounded-2xl border bg-primary/15">
             <div className="flex flex-col items-center gap-8">
-              <span aria-hidden>
-                <LikeIcon size={48} color="#000000" />
-              </span>
+              <div className="relative size-24">
+                <Image
+                  src="/assets/icons/gesture.png"
+                  alt="Gesture"
+                  fill
+                  className="object-cover object-center"
+                  sizes="400px"
+                />
+              </div>
               <p className="font-bold text-lg md:text-xl xl:text-2xl">
                 Um gesto simples, um impacto gigante.
               </p>
