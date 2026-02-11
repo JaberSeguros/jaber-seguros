@@ -13,7 +13,7 @@ export default function Home() {
     <div className="h-fit w-full space-y-20 overflow-hidden md:space-y-32 lg:space-y-40">
       <Hero />
       <AboutUs />
-      <div className="w-full min-w-0 overflow-x-hidden bg-border py-20">
+      <div className="w-full min-w-0 overflow-x-hidden">
         <LogoCloudDemo />
       </div>
       <ServicesOptions />
