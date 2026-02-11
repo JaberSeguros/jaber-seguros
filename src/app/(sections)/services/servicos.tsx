@@ -11,7 +11,7 @@ export function Services() {
   const servicesTextRef = useRef<HTMLDivElement>(null);
   return (
     <section className="mx-auto min-h-screen w-full max-w-[1500px]">
-      <div className="flex w-full flex-col gap-20 lg:gap-30">
+      <div className="flex w-full flex-col gap-20 md:gap-32 lg:gap-40">
         <div className="flex w-full flex-col items-start gap-6 lg:flex-row lg:justify-between">
           <IntroductionBadge text="Serviços" />
           <AnimatedText
