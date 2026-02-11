@@ -3,6 +3,7 @@ import Image from "next/image";
 import { JsonLd } from "@/components/json-ld";
 import { Separator } from "@/components/ui/separator";
 import { OurStory } from "./components/our-story/our-story";
+import { Steps } from "./components/steps/steps";
 
 const pageTitle = "Sobre Nós | Seguros e Consórcios - Jaber Seguros";
 const pageDescription =
@@ -123,6 +124,7 @@ export default function SobreNosPage() {
         <div className="mx-auto w-full max-w-7xl space-y-20 overflow-hidden px-4 md:space-y-32 lg:space-y-40">
           <OurStory />
           <Separator />
+          <Steps />
         </div>
       </main>
     </>
