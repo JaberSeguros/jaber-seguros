@@ -1,6 +1,11 @@
+"use client";
+
 import { CheckIcon } from "lucide-react";
+import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import { fadeUpVariants } from "@/app/(sections)/message/anime";
 import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
 
@@ -37,6 +42,11 @@ const howToJsonLd = {
 };
 
 export function Steps() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, {
+    once: true,
+    amount: 0.3,
+  });
   return (
     <>
       <JsonLd data={howToJsonLd} />
@@ -46,7 +56,13 @@ export function Steps() {
         aria-labelledby="steps-heading"
         aria-label="Proteção pensada para a sua realidade - Como a Jaber Seguros atende você com seguros e consórcios"
       >
-        <div className="flex w-full bmb:flex-row flex-col justify-between gap-8">
+        <motion.div
+          ref={containerRef}
+          variants={fadeUpVariants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          className="flex w-full bmb:flex-row flex-col justify-between gap-8"
+        >
           <div className="relative aspect-square max-h-[650px] w-full max-w-3xl overflow-hidden rounded-[0.33rem] lg:aspect-2/3">
             <Image
               src="/assets/variadas/pexels-arina-krasnikova-6338482.jpg"
@@ -96,7 +112,7 @@ export function Steps() {
               </Link>
             </Button>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );
