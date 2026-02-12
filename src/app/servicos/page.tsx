@@ -41,7 +41,7 @@ export default function ServicosPage() {
           />
         </div>
       </div>
-      <div className="w-full space-y-20 overflow-hidden md:space-y-32 lg:space-y-40 xl:px-4">
+      <div className="w-full space-y-20 overflow-hidden md:space-y-32 lg:space-y-40">
         <Services />
       </div>
     </section>

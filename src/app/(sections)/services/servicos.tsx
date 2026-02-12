@@ -6,6 +6,7 @@ import { IntroductionBadge } from "@/components/introduction-badge";
 import { BigVehiclesConsortium } from "./components/big-vehicles-consortium";
 import { EnterpriseInsurance } from "./components/enterpise-insurance";
 import { EnterpriseHealth } from "./components/enterprise-health";
+import { GarantyInsurance } from "./components/garanty-insurance";
 import { HealthInsurance } from "./components/health-insurance";
 
 export function Services() {
@@ -29,6 +30,7 @@ export function Services() {
         <HealthInsurance />
         <EnterpriseHealth />
         <EnterpriseInsurance />
+        <GarantyInsurance />
         <BigVehiclesConsortium />
       </div>
     </section>
