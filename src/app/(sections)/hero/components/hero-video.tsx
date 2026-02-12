@@ -57,7 +57,7 @@ export default function HeroVideo({
   const showPoster = !loadVideo || !videoReady;
 
   return (
-    <header className="relative mx-auto h-dvh min-h-[600px] w-full max-w-[1890px] overflow-hidden">
+    <header className="relative mx-auto h-dvh min-h-[600px] w-full overflow-hidden">
       {/* Poster: LCP image, fades out when video is ready */}
       <div
         className={cn(
