@@ -37,7 +37,7 @@ export function EnterpriseHealth() {
   return (
     <section
       id="seguro-saude-empresarial"
-      className="min-h-screen w-full"
+      className="mx-auto min-h-screen w-full max-w-[85rem] px-4"
       aria-labelledby="enterprise-health-title"
       aria-label="Seguro Vida Empresarial - Planos e benefícios para empresas Jaber Seguros"
     >

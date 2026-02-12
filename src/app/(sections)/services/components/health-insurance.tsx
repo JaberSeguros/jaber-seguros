@@ -35,7 +35,7 @@ export function HealthInsurance() {
   return (
     <section
       id="seguro-saude"
-      className="min-h-screen w-full"
+      className="mx-auto min-h-screen w-full max-w-[85rem] px-4"
       aria-labelledby="health-insurance-title"
       aria-label="Seguro Saúde - Planos e benefícios Jaber Seguros"
     >

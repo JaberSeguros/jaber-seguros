@@ -10,9 +10,9 @@ import { HealthInsurance } from "./components/health-insurance";
 export function Services() {
   const servicesTextRef = useRef<HTMLDivElement>(null);
   return (
-    <section className="mx-auto min-h-screen w-full max-w-[1500px]">
+    <section className="min-h-screen w-full">
       <div className="flex w-full flex-col gap-20 md:gap-32 lg:gap-40">
-        <div className="flex w-full flex-col items-start gap-6 lg:flex-row lg:justify-between">
+        <div className="mx-auto flex w-full max-w-[85rem] flex-col items-start gap-6 px-4 lg:flex-row lg:justify-between">
           <IntroductionBadge text="Serviços" />
           <AnimatedText
             ref={servicesTextRef}
