@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 const POSTER_SRC = "/assets/hero-image.webp";
 const VIDEO_SOURCES = [
-  { src: "/assets/jaberhero-12s-24fps-1000k-1280.mp4", type: "video/mp4" },
+  { src: "/assets/hero-12s-24fps-1000k-1280.mp4", type: "video/mp4" },
 ] as const;
 
 export default function HeroVideo({
