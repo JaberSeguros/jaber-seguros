@@ -1,6 +1,10 @@
 import { MessageCircleIcon, PinIcon, RocketIcon } from "lucide-react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { AnimatedImage } from "@/components/animted-image/animated-image";
+import { JsonLd } from "@/components/json-ld";
+
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jaberseguros.com.br";
 
 const items = [
   {
@@ -23,18 +27,32 @@ const items = [
   },
 ];
 
+const howWeWorkJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Como a Jaber Seguros trabalha - Experiência técnica com atendimento humano",
+  description:
+    "Na Jaber Seguros, unimos experiência de mais de 15 anos no mercado segurador com atendimento personalizado: orientação da análise à implementação, especialistas que escutam e resolvem com agilidade, processos organizados e suporte contínuo.",
+  url: `${baseUrl}/sobre-nos#como-funciona-jaber`,
+  step: items.map((item, index) => ({
+    "@type": "HowToStep",
+    position: index + 1,
+    name: item.content,
+  })),
+};
+
 const images = [
   {
     id: 1,
     src: "/assets/variadas/pexels-mikhail-nilov-6530565.jpg",
-    alt: "Como a Jaber Seguros funciona - Transparência, planejamento, atendimento ágil e humano",
+    alt: "Consultoria Jaber Seguros - análise da necessidade até implementação da solução em seguros e consórcios",
     className:
       "relative aspect-square max-h-[80vh] min-h-[400px] w-full overflow-hidden rounded-[0.33rem] md:aspect-2/3 md:max-h-[550px] md:min-h-none",
   },
   {
     id: 2,
     src: "/assets/variadas/pexels-boris-pavlikovsky-6793974.jpg",
-    alt: "Como a Jaber Seguros funciona - Transparência, planejamento, atendimento ágil e humano",
+    alt: "Equipe e clientes Jaber Seguros - experiência técnica, atendimento humano e suporte contínuo",
     className:
       "relative aspect-square size-full overflow-hidden rounded-[0.35rem] md:col-span-2 md:aspect-auto",
   },
@@ -42,12 +60,14 @@ const images = [
 
 export function HowWeWork() {
   return (
-    <section
-      id="como-funciona-jaber"
-      className="w-full bg-border/30 py-20 lg:py-35"
-      aria-labelledby="how-we-work-heading"
-      aria-label="Como a Jaber Seguros funciona - Transparência, planejamento, atendimento ágil e humano"
-    >
+    <>
+      <JsonLd data={howWeWorkJsonLd} />
+      <section
+        id="como-funciona-jaber"
+        className="w-full bg-border/30 py-20 lg:py-35"
+        aria-labelledby="how-we-work-heading"
+        aria-label="Como a Jaber Seguros trabalha - Experiência técnica com atendimento humano em seguros e consórcios"
+      >
       <div className="mx-auto w-full max-w-[85rem] space-y-20 px-4">
         <header className="flex w-full flex-col gap-4">
           <p
@@ -94,19 +114,23 @@ export function HowWeWork() {
               />
             ))}
           </div>
-          <div className="mx-auto grid w-full max-w-[85rem] grid-cols-1 gap-6 lg:grid-cols-3">
+          <ol
+            className="mx-auto grid w-full max-w-[85rem] list-none grid-cols-1 gap-6 lg:grid-cols-3"
+            aria-label="Processo de trabalho Jaber Seguros: orientação, especialistas e suporte contínuo"
+          >
             {items.map((item) => (
-              <div
+              <li
                 key={item.id}
                 className="flex items-center gap-8 border-foreground/20 border-t pt-6 text-muted-foreground lg:justify-center"
               >
-                {item.icon}
-                <p className="font-medium">{item.content}</p>
-              </div>
+                <span aria-hidden>{item.icon}</span>
+                <span className="font-medium">{item.content}</span>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>
+    </>
   );
 }
