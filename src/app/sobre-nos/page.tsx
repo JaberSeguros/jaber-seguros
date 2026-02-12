@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { JsonLd } from "@/components/json-ld";
 import { Separator } from "@/components/ui/separator";
+import { How } from "./components/how/how";
+import { HowWeWork } from "./components/how-we-work/how-we-work";
 import { OurStory } from "./components/our-story/our-story";
 import { Steps } from "./components/steps/steps";
-import { How } from "./components/how/how";
 
 const pageTitle = "Sobre Nós | Seguros e Consórcios - Jaber Seguros";
 const pageDescription =
@@ -87,11 +88,11 @@ export default function SobreNosPage() {
       <JsonLd data={aboutPageJsonLd} />
       <main
         id="sobre-nos"
-        className="mx-auto mt-25 min-h-screen w-full max-w-[1500px] space-y-25"
+        className="mt-25 min-h-screen w-full space-y-25"
         aria-labelledby="sobre-nos-page-heading"
         aria-label="Página Sobre Nós - Seguros e Consórcios Jaber Seguros"
       >
-        <div className="w-full space-y-25 px-4">
+        <div className="mx-auto w-full max-w-[1500px] space-y-25 px-4">
           <div className="mx-auto flex w-fit flex-col items-center gap-8">
             <div className="flex animate-fade-in-up items-center gap-4">
               <div
@@ -122,11 +123,12 @@ export default function SobreNosPage() {
             />
           </div>
         </div>
-        <div className="mx-auto w-full max-w-[85rem] space-y-20 overflow-hidden px-4 md:space-y-32 lg:space-y-40">
+        <div className="w-full space-y-20 overflow-hidden md:space-y-32 lg:space-y-40">
           <OurStory />
-          <Separator />
+          <Separator className="mx-auto w-full max-w-[85rem] px-4"/>
           <Steps />
           <How />
+          <HowWeWork />
         </div>
       </main>
     </>

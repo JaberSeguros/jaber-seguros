@@ -62,7 +62,7 @@ const numbers = [
 export function OurStory() {
   return (
     <article
-      className="w-full space-y-15 lg:space-y-35"
+      className="mx-auto w-full max-w-[85rem] space-y-15 px-4 lg:space-y-35"
       aria-labelledby="our-story-heading"
     >
       <div className="flex w-full flex-col justify-between gap-8 lg:flex-row">

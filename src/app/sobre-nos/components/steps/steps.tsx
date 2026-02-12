@@ -52,7 +52,7 @@ export function Steps() {
       <JsonLd data={howToJsonLd} />
       <section
         id="protecao-para-sua-realidade"
-        className="h-fit w-full"
+        className="mx-auto h-fit w-full max-w-[85rem] px-4"
         aria-labelledby="steps-heading"
         aria-label="Proteção pensada para a sua realidade - Como a Jaber Seguros atende você com seguros e consórcios"
       >

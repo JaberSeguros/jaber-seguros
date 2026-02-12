@@ -68,7 +68,7 @@ export function How() {
       <JsonLd data={itemListJsonLd} />
       <section
         id="como-jaber-simplifica"
-        className="w-full"
+        className="mx-auto w-full max-w-[85rem] px-4"
         aria-labelledby="how-heading"
         aria-label="Como a Jaber Seguros simplifica sua proteção - Transparência, planejamento, atendimento ágil e humano"
       >
