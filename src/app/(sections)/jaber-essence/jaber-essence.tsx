@@ -74,7 +74,7 @@ export function JaberEssence() {
     <section
       id={SECTION_ID}
       aria-labelledby={SECTION_HEADING_ID}
-      className="mx-auto w-full max-w-7xl px-4"
+      className="mx-auto w-full max-w-[85rem] px-4"
     >
       {/* JSON-LD for search engines: static data from code, not user input */}
       <script

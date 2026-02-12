@@ -15,7 +15,7 @@ const partnerLogos = [
 
 export function LogoCloudDemo() {
   return (
-    <div className="relative mx-auto h-fit w-full min-w-0 max-w-7xl place-content-center overflow-x-hidden">
+    <div className="relative mx-auto h-fit w-full min-w-0 max-w-[85rem] place-content-center overflow-x-hidden">
       <div
         aria-hidden
         className={cn(

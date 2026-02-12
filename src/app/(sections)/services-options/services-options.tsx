@@ -17,7 +17,7 @@ export function ServicesOptions() {
       aria-labelledby="services-heading"
       aria-label="Opções de serviços - Seguros e consórcios Jaber Seguros"
     >
-      <div className="mx-auto min-h-screen w-full max-w-7xl px-4">
+      <div className="mx-auto min-h-screen w-full max-w-[85rem] px-4">
         <div className="flex w-full flex-col gap-10 lg:gap-15">
           <div className="flex w-full flex-col items-start gap-6 lg:flex-row lg:justify-between">
             <IntroductionBadge text="Serviços" />

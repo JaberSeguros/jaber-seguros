@@ -27,7 +27,7 @@ const paragraphs = [
 export function Vision() {
   return (
     <section className="h-fit min-h-screen w-full bg-orange/20 px-4 py-20">
-      <div className="mx-auto w-full max-w-7xl bmb:space-y-12 space-y-6">
+      <div className="mx-auto w-full max-w-[85rem] bmb:space-y-12 space-y-6">
         <div className="flex w-full bmb:flex-row flex-col justify-between gap-6">
           <h2 className="max-w-3xl text-nowrap font-bold text-3xl text-foreground lg:text-4xl">
             Nossa Visão

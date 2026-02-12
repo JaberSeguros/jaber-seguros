@@ -234,7 +234,7 @@ export function CTAWithVerticalMarquee({
         variants={fadeUpVariants}
         initial="initial"
         animate={isInView ? "animate" : "initial"}
-        className="w-full max-w-7xl"
+        className="w-full max-w-[85rem]"
       >
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-24">
           {/* Left Content */}
