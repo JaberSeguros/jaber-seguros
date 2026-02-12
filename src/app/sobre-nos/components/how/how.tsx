@@ -1,9 +1,15 @@
+"use client";
+
+import { motion, useInView } from "motion/react";
 import Image from "next/image";
+import { useRef } from "react";
+import { fadeUpVariants } from "@/app/(sections)/message/anime";
 import { EmojiIcon } from "@/components/icons/emoji";
 import { FlashIcon } from "@/components/icons/flash";
 import { GlassIcon } from "@/components/icons/glass";
 import { MoneyIcon } from "@/components/icons/money";
 import { JsonLd } from "@/components/json-ld";
+import { ItemCard } from "./components/item-card";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://jaberseguros.com.br";
@@ -52,6 +58,11 @@ const itemListJsonLd = {
 };
 
 export function How() {
+  const howContainerRef = useRef<HTMLDivElement>(null);
+  const isHowInView = useInView(howContainerRef, {
+    once: true,
+    amount: 0.5,
+  });
   return (
     <>
       <JsonLd data={itemListJsonLd} />
@@ -62,7 +73,13 @@ export function How() {
         aria-label="Como a Jaber Seguros simplifica sua proteção - Transparência, planejamento, atendimento ágil e humano"
       >
         <div className="w-full space-y-15">
-          <div className="mx-auto flex w-fit flex-col items-center gap-6">
+          <motion.div
+            ref={howContainerRef}
+            variants={fadeUpVariants}
+            initial="initial"
+            animate={isHowInView ? "animate" : "initial"}
+            className="mx-auto flex w-fit flex-col items-center gap-6"
+          >
             <div className="relative size-24" aria-hidden>
               <Image
                 src="/assets/icons/how.png"
@@ -82,23 +99,18 @@ export function How() {
               Empresas e famílias confiam na Jaber Seguros para proteger o que
               construíram com tanto esforço.
             </p>
-          </div>
+          </motion.div>
           <ul
             className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-4"
             aria-label="Diferenciais Jaber Seguros: transparência total, planejamento inteligente, atendimento ágil e humano"
           >
             {items.map((item) => (
-              <li key={item.id} className="rounded-[0.35rem] bg-border/30 p-6">
-                <div className="flex flex-col gap-22 lg:gap-24">
-                  <span aria-hidden>{item.icon}</span>
-                  <div className="space-y-4">
-                    <h3 className="text-nowrap font-bold text-2xl text-foreground leading-tight tracking-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-foreground/90">{item.description}</p>
-                  </div>
-                </div>
-              </li>
+              <ItemCard
+                key={item.id}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
             ))}
           </ul>
         </div>
