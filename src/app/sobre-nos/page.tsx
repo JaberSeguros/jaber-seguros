@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { JsonLd } from "@/components/json-ld";
 import { Separator } from "@/components/ui/separator";
+import { CTA } from "../(sections)/CTA/cta";
 import { How } from "./components/how/how";
 import { HowWeWork } from "./components/how-we-work/how-we-work";
 import { OurStory } from "./components/our-story/our-story";
@@ -125,11 +126,12 @@ export default function SobreNosPage() {
         </div>
         <div className="w-full space-y-20 overflow-hidden md:space-y-32 lg:space-y-40">
           <OurStory />
-          <Separator className="mx-auto w-full max-w-[85rem] px-4"/>
+          <Separator className="mx-auto w-full max-w-[85rem] px-4" />
           <Steps />
           <How />
           <HowWeWork />
           <Separator />
+          <CTA />
         </div>
       </main>
     </>
