@@ -8,6 +8,7 @@ import { StrategyIcon } from "@/components/icons/strategy-icon";
 import { TimeIcon } from "@/components/icons/time-icon";
 import { cn } from "@/lib/utils";
 import { imagesContentVariants } from "./anime";
+import { ServiceIntro } from "@/components/service-intro";
 
 const items = [
   {
@@ -89,25 +90,7 @@ export function BigVehiclesConsortium() {
       aria-label="Consórcio para veículos pesados - Planos e benefícios Jaber Seguros"
     >
       <div className="flex w-full flex-col gap-10 lg:gap-15">
-        <div className="flex items-center gap-2">
-          <div
-            className="relative aspect-square size-18 opacity-50 grayscale-75 sm:size-20"
-            aria-hidden
-          >
-            <Image
-              src="/assets/logos/logo-only.png"
-              alt="Consórcio para veículos pesados - Jaber Seguros"
-              width={80}
-              height={80}
-            />
-          </div>
-          <h2
-            id="big-vehicles-consortium-title"
-            className="rounded-full border border-primary/15 bg-primary/10 p-1.5 font-bold sm:text-lg md:text-xl lg:text-2xl"
-          >
-            Consórcio para veículos pesados
-          </h2>
-        </div>
+        <ServiceIntro title="Consórcio para veículos pesados" alt="Consórcio para veículos pesados" />
         <div className="flex w-full flex-col gap-10">
           <div className="flex flex-col justify-between gap-6 lg:flex-row">
             <h3 className="max-w-3xl font-bold text-3xl md:text-4xl lg:text-5xl">
