@@ -6,9 +6,9 @@ import { EvolutionIcon } from "@/components/icons/evolution-icon";
 import { PlanIcon } from "@/components/icons/plan-icon";
 import { StrategyIcon } from "@/components/icons/strategy-icon";
 import { TimeIcon } from "@/components/icons/time-icon";
+import { ServiceIntro } from "@/components/service-intro";
 import { cn } from "@/lib/utils";
 import { imagesContentVariants } from "./anime";
-import { ServiceIntro } from "@/components/service-intro";
 
 const items = [
   {
@@ -90,10 +90,13 @@ export function BigVehiclesConsortium() {
       aria-label="Consórcio para veículos pesados - Planos e benefícios Jaber Seguros"
     >
       <div className="flex w-full flex-col gap-10 lg:gap-15">
-        <ServiceIntro title="Consórcio para veículos pesados" alt="Consórcio para veículos pesados" />
+        <ServiceIntro
+          title="Consórcio para veículos pesados"
+          alt="Consórcio para veículos pesados"
+        />
         <div className="flex w-full flex-col gap-10">
           <div className="flex flex-col justify-between gap-6 lg:flex-row">
-            <h3 className="max-w-3xl font-bold text-3xl md:text-4xl lg:text-5xl">
+            <h3 className="max-w-2xl font-bold text-3xl md:text-4xl lg:text-5xl xl:max-w-3xl">
               Produtividade no campo começa com decisões inteligentes.
             </h3>
             <AnimatedText
