@@ -449,7 +449,7 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
           </div>
         </section>
 
-        <div className="mx-auto w-full max-w-[85rem] px-4 py-20 md:py-32 lg:py-40">
+        <div className="mx-auto w-full max-w-[85rem] py-20 md:py-32 lg:py-40">
           <CTA />
         </div>
       </main>

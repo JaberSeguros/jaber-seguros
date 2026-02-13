@@ -171,7 +171,7 @@ export function BigVehiclesConsortium() {
                       aria-label={`Ver ${item.shortTitle} - consórcio veículos pesados`}
                       aria-pressed={activeImage === item.id}
                     >
-                      <p className="font-bold text-primary-foreground text-xs sm:text-sm">
+                      <p className="font-bold text-[0.65rem] text-primary-foreground sm:text-sm">
                         {item.shortTitle}
                       </p>
                     </button>
