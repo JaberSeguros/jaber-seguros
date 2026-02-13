@@ -66,7 +66,7 @@ const footerLinks = [
 export function Footer() {
   return (
     <section className="mx-auto mt-20 w-full max-w-[85rem] md:mt-32 lg:mt-40 lg:mb-20 lg:px-4">
-      <div className="w-full space-y-8 bg-foreground-dark p-4 py-12 md:p-6 lg:rounded-4xl lg:p-12">
+      <div className="w-full space-y-8 bg-foreground-dark p-4 py-12 md:p-6 lg:rounded-lg lg:p-12">
         <div className="mb-14 flex flex-col justify-between gap-12 lg:flex-row lg:gap-6">
           <div className="max-w-md space-y-4.5">
             <div className="flex items-center">

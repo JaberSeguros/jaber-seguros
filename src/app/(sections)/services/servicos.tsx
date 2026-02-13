@@ -3,14 +3,17 @@
 import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { IntroductionBadge } from "@/components/introduction-badge";
+import { Separator } from "@/components/ui/separator";
+import { CTA } from "../CTA/cta";
 import { BigVehiclesConsortium } from "./components/big-vehicles-consortium";
-import { EnterpriseInsurance } from "./components/enterpise-insurance";
+import { EnterpriseInsurance } from "./components/enterpise-insurance/enterpise-insurance";
 import { EnterpriseHealth } from "./components/enterprise-health";
-import { GarantyInsurance } from "./components/garanty-insurance";
+import { GarantyInsurance } from "./components/garanty-insurance/garanty-insurance";
 import { HealthInsurance } from "./components/health-insurance";
-import { RealEstateConsortium } from "./components/real-estate-consortium";
-import { ResponsabilityInsurance } from "./components/responsability-insurance";
-import { VehiclesConsortium } from "./components/vehicles-consortium";
+import { RealEstateConsortium } from "./components/real-estate-consortium/real-estate-consortium";
+import { ResponsabilityInsurance } from "./components/responsability-insurance/responsability-insurance";
+import { Sustainable } from "./components/sustainable";
+import { VehiclesConsortium } from "./components/vehicles-consortium/vehicles-consortium";
 
 export function Services() {
   const servicesTextRef = useRef<HTMLDivElement>(null);
@@ -38,6 +41,9 @@ export function Services() {
         <BigVehiclesConsortium />
         <VehiclesConsortium />
         <RealEstateConsortium />
+        <Sustainable />
+        <Separator />
+        <CTA />
       </div>
     </section>
   );

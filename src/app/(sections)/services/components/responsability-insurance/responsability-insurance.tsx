@@ -1,9 +1,14 @@
+"use client";
+
+import { motion, useInView } from "motion/react";
 import Link from "next/link";
+import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { JsonLd } from "@/components/json-ld";
 import { ServiceIntro } from "@/components/service-intro";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { fadeUpVariants } from "../../../message/anime";
+import { ResponsabilityItemCard } from "./responsability-item-card";
 
 const items = [
   {
@@ -41,6 +46,11 @@ const structuredData = {
 };
 
 export function ResponsabilityInsurance() {
+  const itemRef = useRef<HTMLLIElement>(null);
+  const isInView = useInView(itemRef, {
+    once: true,
+    amount: 0.3,
+  });
   return (
     <section
       id="seguro-responsabilidade-civil"
@@ -67,24 +77,15 @@ export function ResponsabilityInsurance() {
         </div>
         <ul className="grid grid-cols-1 mlg:grid-cols-4! gap-6 pt-4 md:grid-cols-2">
           {items.map((item) => (
-            <li key={item.id} className="rounded-sm bg-accent-foreground p-6">
-              <div
-                className={cn(
-                  "flex h-full flex-col justify-between gap-20",
-                  item.id === 2 && "flex-col-reverse",
-                )}
-              >
-                <div className="flex items-center gap-2 text-primary-foreground">
-                  <div className="size-12 flex-center shrink-0 rounded-full backdrop-brightness-70">
-                    <span className="font-bold text-xl">{`0${item.id}`}</span>
-                  </div>
-                  <h3 className="font-bold text-[1.35rem]">{item.title}</h3>
-                </div>
-                <p className="text-[0.965rem] text-muted/85">{item.content}</p>
-              </div>
-            </li>
+            <ResponsabilityItemCard key={item.id} {...item} />
           ))}
-          <li className="size-full flex-center rounded-sm border bg-border/30 p-6">
+          <motion.li
+            ref={itemRef}
+            variants={fadeUpVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            className="size-full flex-center rounded-sm border bg-border/30 p-6"
+          >
             <Button
               variant="outline"
               className="rounded-full bg-accent-foreground px-8 py-8 font-bold text-primary-foreground uppercase hover:bg-accent-foreground/80 hover:text-primary-foreground"
@@ -98,7 +99,7 @@ export function ResponsabilityInsurance() {
                 Saiba mais
               </Link>
             </Button>
-          </li>
+          </motion.li>
         </ul>
       </div>
     </section>

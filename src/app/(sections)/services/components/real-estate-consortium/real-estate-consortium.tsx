@@ -1,11 +1,8 @@
-import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { JsonLd } from "@/components/json-ld";
 import { ServiceIntro } from "@/components/service-intro";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { RealEstateItemCard } from "./real-estate-item-card";
 
 const miniImages = [
   {
@@ -115,52 +112,7 @@ export function RealEstateConsortium() {
           </div>
           <ul className="grid grid-cols-1 gap-4">
             {items.map((item) => (
-              <li
-                key={item.id}
-                className={cn("flex flex-col gap-15 rounded-[0.35rem] bg-border/30 p-6 lg:flex-row-reverse lg:items-center lg:gap-4",
-                  item.id === 2 &&
-                    "bg-accent-foreground text-primary-foreground",
-                )}
-              >
-                <div className="relative aspect-video shrink-0 overflow-hidden rounded-[0.35rem] lg:aspect-square lg:w-1/3 xl:w-1/4">
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 500px"
-                  />
-                </div>
-                <div className="w-full space-y-3">
-                  <h3 className="font-bold text-xl">{item.title}</h3>
-                  <p
-                    className={cn(
-                      "text-muted-foreground text-sm",
-                      item.id === 2 && "text-primary-foreground",
-                    )}
-                  >
-                    {item.content}
-                  </p>
-                  <Button
-                    className={cn(
-                      "w-1/2 max-w-xs bg-accent-foreground text-primary-foreground hover:bg-accent-foreground hover:text-primary-foreground/80",
-                      item.id === 2 &&
-                        "bg-primary-foreground text-foreground-dark hover:bg-primary-foreground/80 hover:text-foreground-dark",
-                    )}
-                    asChild
-                  >
-                    <Link
-                      href="/consorcios/imovel"
-                      className="flex-center px-6 py-5"
-                      title="Saiba mais sobre Consórcio para imóveis - Jaber Seguros"
-                      aria-label={`Saiba mais sobre Consórcio para imóveis: ${item.title} - solicite uma cotação`}
-                    >
-                      Saiba Mais{" "}
-                      <ArrowRightIcon className="size-4" aria-hidden />
-                    </Link>
-                  </Button>
-                </div>
-              </li>
+              <RealEstateItemCard key={item.id} {...item} />
             ))}
           </ul>
         </div>

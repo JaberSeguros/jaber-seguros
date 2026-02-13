@@ -1,11 +1,16 @@
+"use client";
+
 import { Banknote, FileSignature, Scale } from "lucide-react";
+import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
+import { JsonLd } from "@/components/json-ld";
 import { ServiceIntro } from "@/components/service-intro";
 import { Button } from "@/components/ui/button";
-import { JsonLd } from "@/components/json-ld";
-import { cn } from "@/lib/utils";
+import { fadeUpVariants } from "../../../message/anime";
+import { GarantyItemCard } from "./garanty-item-card";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://jaberseguros.com.br";
@@ -65,6 +70,11 @@ const serviceJsonLd = {
 };
 
 export function GarantyInsurance() {
+  const itemRef = useRef<HTMLLIElement>(null);
+  const isInView = useInView(itemRef, {
+    once: true,
+    amount: 0.3,
+  });
   return (
     <>
       <JsonLd data={serviceJsonLd} />
@@ -102,64 +112,52 @@ export function GarantyInsurance() {
               className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
               aria-label="Benefícios do Seguro Garantia: cumprimento contratual, alternativa à fiança bancária, credibilidade em licitações"
             >
-              <li className="aspect-video md:col-span-2 lg:col-span-1 lg:row-span-2 lg:aspect-auto">
-              <div className="relative size-full overflow-hidden rounded-sm">
-                <Image
-                  src="/assets/serviços/seguros/garantia.webp"
-                  alt="Seguro Garantia Jaber Seguros - segurança jurídica, cumprimento contratual, alternativa à fiança bancária e credibilidade em licitações"
-                  fill
-                  className="object-cover object-center brightness-80"
-                />
-                <div className="absolute inset-0">
-                  <div className="flex size-full flex-col items-start justify-end p-6">
-                    <div className="space-y-4">
-                      <p className="text-primary-foreground md:text-lg">
-                        Precisa emitir um Seguro Garantia?
-                      </p>
-                      <Button
-                        asChild
-                        className="rounded-full bg-background px-8 py-8 font-bold text-foreground uppercase"
-                      >
-                        <Link
-                          href="https://wa.me/5511993101907"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="Falar com consultor Jaber Seguros no WhatsApp - Seguro Garantia"
-                          aria-label="Solicitar proposta de Seguro Garantia pelo WhatsApp - Jaber Seguros"
+              <motion.li
+                ref={itemRef}
+                variants={fadeUpVariants}
+                initial="initial"
+                animate={isInView ? "animate" : "initial"}
+                className="aspect-video md:col-span-2 lg:col-span-1 lg:row-span-2 lg:aspect-auto"
+              >
+                <div className="relative size-full overflow-hidden rounded-sm">
+                  <Image
+                    src="/assets/serviços/seguros/garantia.webp"
+                    alt="Seguro Garantia Jaber Seguros - segurança jurídica, cumprimento contratual, alternativa à fiança bancária e credibilidade em licitações"
+                    fill
+                    className="object-cover object-center brightness-80"
+                  />
+                  <div className="absolute inset-0">
+                    <div className="flex size-full flex-col items-start justify-end p-6">
+                      <div className="space-y-4">
+                        <p className="text-primary-foreground md:text-lg">
+                          Precisa emitir um Seguro Garantia?
+                        </p>
+                        <Button
+                          asChild
+                          className="rounded-full bg-background px-8 py-8 font-bold text-foreground uppercase"
                         >
-                          Solicitar Proposta
-                        </Link>
-                      </Button>
+                          <Link
+                            href="https://wa.me/5511993101907"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Falar com consultor Jaber Seguros no WhatsApp - Seguro Garantia"
+                            aria-label="Solicitar proposta de Seguro Garantia pelo WhatsApp - Jaber Seguros"
+                          >
+                            Solicitar Proposta
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            {items.map((item) => (
-              <li
-                key={item.id}
-                className={cn("rounded-sm bg-background p-6", item.className)}
-              >
-                <div className="flex flex-col justify-between gap-20">
-                  <div
-                    className="size-12 flex-center rounded-full bg-border/40"
-                    aria-hidden
-                  >
-                    {item.icon}
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="font-bold text-xl lg:text-2xl">{item.title}</h3>
-                    <p className="max-w-2xl text-muted-foreground text-sm lg:text-base">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+              </motion.li>
+              {items.map((item) => (
+                <GarantyItemCard key={item.id} {...item} />
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }

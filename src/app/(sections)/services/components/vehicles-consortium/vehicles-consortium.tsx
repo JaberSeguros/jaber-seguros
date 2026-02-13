@@ -1,10 +1,15 @@
+"use client";
+
 import { ArrowRightIcon } from "lucide-react";
-import Image from "next/image";
+import { motion, useInView } from "motion/react";
 import Link from "next/link";
+import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { JsonLd } from "@/components/json-ld";
 import { ServiceIntro } from "@/components/service-intro";
 import { Button } from "@/components/ui/button";
+import { fadeUpVariants } from "../../../message/anime";
+import { VehiclesItemCard } from "./vehicles-item-card";
 
 const items = [
   {
@@ -48,6 +53,11 @@ const structuredData = {
 };
 
 export function VehiclesConsortium() {
+  const itemRef = useRef<HTMLLIElement>(null);
+  const isInView = useInView(itemRef, {
+    once: true,
+    amount: 0.3,
+  });
   return (
     <section
       id="consorcio-veiculos"
@@ -83,30 +93,15 @@ export function VehiclesConsortium() {
           <div className="w-full space-y-6">
             <ul className="grid grid-cols-1 mlg:grid-cols-3! gap-6 md:grid-cols-2">
               {items.map((item) => (
-                <li
-                  key={item.id}
-                  className="rounded-sm border-2 border-foreground/10 bg-background p-1"
-                >
-                  <div className="relative aspect-square w-full overflow-hidden rounded-sm">
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      fill
-                      className="mask-[linear-gradient(to_bottom,black_45%,transparent_77%)] object-cover object-center"
-                      sizes="(max-width: 768px) 100vw, 1500px"
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-end gap-2 px-5.5 pb-2">
-                      <h3 className="font-bold text-foreground text-lg md:text-xl">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {item.content}
-                      </p>
-                    </div>
-                  </div>
-                </li>
+                <VehiclesItemCard key={item.id} {...item} />
               ))}
-              <li className="mlg:hidden! w-full flex-center rounded-2xl bg-foreground-dark p-6 text-primary-foreground">
+              <motion.li
+                ref={itemRef}
+                variants={fadeUpVariants}
+                initial="initial"
+                animate={isInView ? "animate" : "initial"}
+                className="mlg:hidden! w-full flex-center rounded-2xl bg-foreground-dark p-6 text-primary-foreground"
+              >
                 <Link
                   href="/seguros/empresarial"
                   className="size-full flex-center"
@@ -120,7 +115,7 @@ export function VehiclesConsortium() {
                     Saiba Mais <ArrowRightIcon className="size-4" aria-hidden />
                   </Button>
                 </Link>
-              </li>
+              </motion.li>
             </ul>
             <div className="mlg:flex! hidden! mx-auto w-fit flex-center rounded-full bg-accent-foreground text-primary-foreground">
               <Link

@@ -1,10 +1,16 @@
+"use client";
+
 import { ArrowRightIcon } from "lucide-react";
+import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { JsonLd } from "@/components/json-ld";
 import { ServiceIntro } from "@/components/service-intro";
 import { Button } from "@/components/ui/button";
+import { fadeUpVariants } from "../../../message/anime";
+import { ItemCard } from "./item-card";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://jaberseguros.com.br";
@@ -58,6 +64,11 @@ const serviceJsonLd = {
 };
 
 export function EnterpriseInsurance() {
+  const linkRef = useRef<HTMLLIElement>(null);
+  const isInView = useInView(linkRef, {
+    once: true,
+    amount: 0.8,
+  });
   return (
     <>
       <JsonLd data={serviceJsonLd} />
@@ -106,23 +117,15 @@ export function EnterpriseInsurance() {
                 aria-label="Benefícios do Seguro Empresarial: proteção contra imprevistos, segurança patrimonial, cobertura sob medida"
               >
                 {items.map((item) => (
-                  <li
-                    key={item.id}
-                    className="flex flex-col gap-4 rounded-2xl bg-border/30 p-6"
-                  >
-                    <div
-                      className="size-12 flex-center rounded-full bg-border"
-                      aria-hidden
-                    >
-                      <span className="font-bold text-xl">{`0${item.id}`}</span>
-                    </div>
-                    <h3 className="font-bold text-xl">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {item.description}
-                    </p>
-                  </li>
+                  <ItemCard key={item.id} {...item} />
                 ))}
-                <li className="w-full flex-center rounded-2xl bg-accent-foreground p-6 text-primary-foreground">
+                <motion.li
+                  ref={linkRef}
+                  variants={fadeUpVariants}
+                  initial="initial"
+                  animate={isInView ? "animate" : "initial"}
+                  className="w-full flex-center rounded-2xl bg-accent-foreground p-6 text-primary-foreground"
+                >
                   <Link
                     href="/seguros/seguro-empresarial"
                     className="size-full flex-center"
@@ -134,7 +137,7 @@ export function EnterpriseInsurance() {
                       <ArrowRightIcon className="size-4" aria-hidden />
                     </Button>
                   </Link>
-                </li>
+                </motion.li>
               </ul>
             </div>
           </div>
