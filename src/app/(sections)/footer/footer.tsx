@@ -101,8 +101,8 @@ export function Footer() {
                     <Link
                       key={content.id}
                       href={content.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target={content.href.includes("http") ? "_blank" : undefined}
+                      rel={content.href.includes("http") ? "noopener noreferrer" : undefined}
                       className="text-muted/85 transition-colors duration-300 hover:text-primary-foreground lg:max-w-[12rem]"
                     >
                       {content.title}

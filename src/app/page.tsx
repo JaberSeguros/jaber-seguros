@@ -10,10 +10,10 @@ import { Vision } from "./(sections)/vision/vision";
 
 export default function Home() {
   return (
-    <div className="h-fit w-full space-y-20 overflow-hidden md:space-y-32 lg:space-y-40">
+    <div className="h-fit w-full space-y-20 md:space-y-32 lg:space-y-40">
       <Hero />
       <AboutUs />
-      <div className="w-full min-w-0 overflow-x-hidden">
+      <div className="w-full min-w-0">
         <LogoCloudDemo />
       </div>
       <ServicesOptions />
