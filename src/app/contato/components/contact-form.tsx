@@ -96,7 +96,7 @@ export function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-6 p-5 sm:p-6 md:p-8"
+        className="space-y-6"
       >
         <div className="rounded-xl border border-border/60 bg-card/50 p-5 shadow-sm sm:p-6">
           <div className="mb-5 flex items-center gap-3">
