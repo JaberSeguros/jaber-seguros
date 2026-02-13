@@ -9,6 +9,7 @@ import { EnterpriseHealth } from "./components/enterprise-health";
 import { GarantyInsurance } from "./components/garanty-insurance";
 import { HealthInsurance } from "./components/health-insurance";
 import { ResponsabilityInsurance } from "./components/responsability-insurance";
+import { VehiclesConsortium } from "./components/vehicles-consortium";
 
 export function Services() {
   const servicesTextRef = useRef<HTMLDivElement>(null);
@@ -34,6 +35,7 @@ export function Services() {
         <GarantyInsurance />
         <ResponsabilityInsurance />
         <BigVehiclesConsortium />
+        <VehiclesConsortium />
       </div>
     </section>
   );

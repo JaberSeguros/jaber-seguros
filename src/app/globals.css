@@ -6,7 +6,7 @@
 @theme {
   --breakpoint-xs: 400px;
   --breakpoint-bmb: 857px;
-  --breakpoint-mlg: 1024px;
+  --breakpoint-mlg: 1124px;
   --breakpoint-2xl: 1400px;
   --animate-fade-up: fade-in-up 0.6s ease-out both;
 }
