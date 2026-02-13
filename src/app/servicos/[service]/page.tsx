@@ -249,7 +249,7 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
         </section>
 
         {/* Differentials: "O que você tem com a Jaber" + 3 cards */}
-        <section className="mx-auto max-w-[85rem] px-4 py-16 md:py-20">
+        <section className="mx-auto max-w-[85rem] px-4 py-20 md:py-32 lg:py-40">
           <h2 className="mb-10 font-bold text-2xl md:text-3xl lg:text-4xl">
             O diferencial Jaber
           </h2>
@@ -298,7 +298,8 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                 asChild
                 className="mx-auto w-full max-w-lg shrink-0 rounded-full px-6 py-6 font-bold lg:w-fit"
               >
-                <Link href={`https://wa.me/5511993101907?text=${encodeURIComponent(message)}`}
+                <Link
+                  href={`https://wa.me/5511993101907?text=${encodeURIComponent(message)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   title={`Falar sobre ${service.headline} - Jaber Seguros`}
@@ -383,7 +384,8 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                         asChild
                         className="rounded-full px-6 py-6 font-bold"
                       >
-                        <Link href={`https://wa.me/5511993101907?text=${encodeURIComponent(message)}`}
+                        <Link
+                          href={`https://wa.me/5511993101907?text=${encodeURIComponent(message)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           title={`Falar sobre ${service.headline} - Jaber Seguros`}
@@ -404,7 +406,8 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                   até 24 horas úteis.
                 </p>
                 <Button asChild className="w-fit rounded-full py-6 font-bold">
-                  <Link href={`https://wa.me/5511993101907?text=${encodeURIComponent(message)}`}
+                  <Link
+                    href={`https://wa.me/5511993101907?text=${encodeURIComponent(message)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     title={`Falar sobre ${service.headline} - Jaber Seguros`}
@@ -419,7 +422,7 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
         </section>
 
         {/* FAQ: two columns - heading left, accordion right */}
-        <section className="mx-auto max-w-[85rem] px-4 py-16 md:py-20">
+        <section className="mx-auto max-w-[85rem] px-4 py-20 md:py-32 lg:py-40">
           <div className="flex flex-col gap-10 lg:flex-row lg:justify-center lg:gap-16">
             <div>
               <p className="mb-2 font-semibold text-muted-foreground text-sm uppercase tracking-wider">
@@ -446,7 +449,7 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
           </div>
         </section>
 
-        <div className="mx-auto w-full max-w-[85rem] px-4">
+        <div className="mx-auto w-full max-w-[85rem] px-4 py-20 md:py-32 lg:py-40">
           <CTA />
         </div>
       </main>
