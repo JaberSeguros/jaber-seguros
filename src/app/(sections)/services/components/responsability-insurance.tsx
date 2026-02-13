@@ -67,7 +67,7 @@ export function ResponsabilityInsurance() {
         </div>
         <ul className="grid grid-cols-1 mlg:grid-cols-4! gap-6 pt-4 md:grid-cols-2">
           {items.map((item) => (
-            <li key={item.id} className="rounded-sm bg-foreground-dark p-6">
+            <li key={item.id} className="rounded-sm bg-accent-foreground p-6">
               <div
                 className={cn(
                   "flex h-full flex-col justify-between gap-20",
@@ -75,7 +75,7 @@ export function ResponsabilityInsurance() {
                 )}
               >
                 <div className="flex items-center gap-2 text-primary-foreground">
-                  <div className="size-12 flex-center shrink-0 rounded-full bg-foreground/90">
+                  <div className="size-12 flex-center shrink-0 rounded-full backdrop-brightness-70">
                     <span className="font-bold text-xl">{`0${item.id}`}</span>
                   </div>
                   <h3 className="font-bold text-[1.35rem]">{item.title}</h3>
@@ -87,11 +87,11 @@ export function ResponsabilityInsurance() {
           <li className="size-full flex-center rounded-sm border bg-border/30 p-6">
             <Button
               variant="outline"
-              className="rounded-full bg-foreground-dark px-8 py-8 font-bold text-primary-foreground uppercase hover:bg-foreground hover:text-primary-foreground"
+              className="rounded-full bg-accent-foreground px-8 py-8 font-bold text-primary-foreground uppercase hover:bg-accent-foreground/80 hover:text-primary-foreground"
               asChild
             >
               <Link
-                href="/services/responsability-insurance"
+                href="/seguros/responsabilidade-civil"
                 aria-label="Saiba mais sobre Seguro de Responsabilidade Civil e solicite uma cotação"
                 title="Seguro de Responsabilidade Civil - Jaber Seguros"
               >

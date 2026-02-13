@@ -143,7 +143,7 @@ export function RealEstateConsortium() {
                   </p>
                   <Button
                     className={cn(
-                      "w-1/2 max-w-xs bg-foreground-dark text-primary-foreground hover:bg-foreground-dark hover:text-primary-foreground/80",
+                      "w-1/2 max-w-xs bg-accent-foreground text-primary-foreground hover:bg-accent-foreground hover:text-primary-foreground/80",
                       item.id === 2 &&
                         "bg-primary-foreground text-foreground-dark hover:bg-primary-foreground/80 hover:text-foreground-dark",
                     )}

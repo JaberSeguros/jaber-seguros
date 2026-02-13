@@ -1,5 +1,7 @@
+import { ArrowRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { AnimatedText } from "@/components/animated-text/animated-text";
 import { EvolutionIcon } from "@/components/icons/evolution-icon";
@@ -7,6 +9,7 @@ import { PlanIcon } from "@/components/icons/plan-icon";
 import { StrategyIcon } from "@/components/icons/strategy-icon";
 import { TimeIcon } from "@/components/icons/time-icon";
 import { ServiceIntro } from "@/components/service-intro";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { imagesContentVariants } from "./anime";
 
@@ -214,6 +217,14 @@ export function BigVehiclesConsortium() {
               </div>
             </div>
           </div>
+          <Button
+            asChild
+            className="w-full bg-accent-foreground py-8 text-primary-foreground hover:bg-accent-foreground hover:text-primary-foreground/80"
+          >
+            <Link href="/consorcios/veiculos-pesados">
+              Saiba Mais <ArrowRightIcon className="size-4" aria-hidden />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

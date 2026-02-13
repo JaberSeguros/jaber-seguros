@@ -122,16 +122,16 @@ export function VehiclesConsortium() {
                 </Link>
               </li>
             </ul>
-            <div className="mlg:flex! hidden! mx-auto w-fit flex-center rounded-full bg-foreground-dark p-4 px-6 text-primary-foreground">
+            <div className="mlg:flex! hidden! mx-auto w-fit flex-center rounded-full bg-accent-foreground text-primary-foreground">
               <Link
                 href="/seguros/empresarial"
-                className="size-full flex-center"
+                className="size-full flex-center p-4 px-6"
                 title="Saiba mais sobre Consórcio para veículos - Jaber Seguros"
                 aria-label="Saiba mais sobre Consórcio para veículos, carro e moto sem juros, e solicite uma cotação"
               >
                 <Button
                   variant="ghost"
-                  className="cursor-pointer uppercase hover:bg-foreground-dark hover:text-primary-foreground/80"
+                  className="cursor-pointer uppercase hover:bg-accent-foreground hover:text-primary-foreground/80"
                 >
                   Saiba Mais <ArrowRightIcon className="size-4" aria-hidden />
                 </Button>
