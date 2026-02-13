@@ -96,15 +96,9 @@ export default function SobreNosPage() {
         <div className="mx-auto w-full max-w-[1500px] space-y-25 px-4">
           <div className="mx-auto flex w-fit flex-col items-center gap-8">
             <div className="flex animate-fade-in-up items-center gap-4">
-              <div
-                className="size-1.5 rounded-full bg-foreground"
-                aria-hidden
-              />
+              <div className="size-1.5 bg-primary" aria-hidden />
               <p className="font-bold text-foreground/80 text-lg">Sobre Nós</p>
-              <div
-                className="size-1.5 rounded-full bg-foreground"
-                aria-hidden
-              />
+              <div className="size-1.5 bg-primary" aria-hidden />
             </div>
             <h1
               id="sobre-nos-page-heading"
