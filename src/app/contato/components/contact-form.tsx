@@ -94,10 +94,7 @@ export function ContactForm() {
   }
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-6"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="rounded-xl border border-border/60 bg-card/50 p-5 shadow-sm sm:p-6">
           <div className="mb-5 flex items-center gap-3">
             <span className="flex size-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -467,7 +464,7 @@ export function ContactForm() {
             control={form.control}
             name="LGPD"
             render={({ field }) => (
-              <FormItem className="flex flex-row items-start gap-3 rounded-lg border border-border/60 bg-muted/20 p-4">
+              <FormItem className="mt-4 flex flex-row items-start gap-3 rounded-lg border border-border/60 bg-muted/20 p-4">
                 <FormControl>
                   <Checkbox
                     id="lgpd-checkbox"
