@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "sonner";
 import { Navigation } from "@/components/navigation-menu/navigation-menu";
 import { MenuProvider } from "@/contexts/menu-context";
 import { Footer } from "./(sections)/footer/footer";
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Navigation />
           {children}
           <Footer />
+          <Toaster position="top-center" />
         </MenuProvider>
       </body>
     </html>
