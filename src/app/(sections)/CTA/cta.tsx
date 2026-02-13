@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function CTA() {
   return (
-    <section className="mx-auto w-full max-w-[85rem] px-4">
+    <section className="mx-auto w-full max-w-[85rem]">
       <div className="h-fit w-full rounded-lg bg-primary/20 px-4 py-12 lg:px-12 lg:py-24">
         <div className="mx-auto flex w-fit flex-col items-center gap-6">
           <div className="relative size-24">
