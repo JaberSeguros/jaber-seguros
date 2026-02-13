@@ -1,5 +1,6 @@
 /** biome-ignore-all lint/a11y/useSemanticElements: <because it's a card> */
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMenu } from "@/contexts/menu-context";
 import { Button } from "../ui/button";
@@ -54,8 +55,9 @@ export function MenuContentCard({ content }: MenuContentCardProps) {
             setIsMenuOpen(false);
             router.push(content.href);
           }}
+          asChild
         >
-          {content.cta}
+          <Link href={content.href}>{content.cta}</Link>
         </Button>
       </CardFooter>
     </Card>

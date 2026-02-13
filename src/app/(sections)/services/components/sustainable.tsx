@@ -69,7 +69,7 @@ export function Sustainable() {
                     asChild
                   >
                     <Link
-                      href="/seguros/seguro-empresarial"
+                      href="/servicos/consorcio-sustentavel"
                       title="Saiba mais sobre Consórcio Sustentável - Jaber Seguros"
                       aria-label="Saiba mais sobre Consórcio Sustentável, energia solar e eficiência energética sem juros"
                     >

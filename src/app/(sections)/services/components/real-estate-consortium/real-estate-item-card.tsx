@@ -68,7 +68,7 @@ export function RealEstateItemCard({
           asChild
         >
           <Link
-            href="/consorcios/imovel"
+            href="/servicos/consorcio-imoveis"
             className="flex-center px-6 py-5"
             title="Saiba mais sobre Consórcio para imóveis - Jaber Seguros"
             aria-label={`Saiba mais sobre Consórcio para imóveis: ${title} - solicite uma cotação`}

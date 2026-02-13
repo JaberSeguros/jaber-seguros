@@ -103,7 +103,7 @@ export function VehiclesConsortium() {
                 className="mlg:hidden! w-full flex-center rounded-2xl bg-foreground-dark p-6 text-primary-foreground"
               >
                 <Link
-                  href="/seguros/empresarial"
+                  href="/servicos/consorcio-veiculos"
                   className="size-full flex-center"
                   title="Saiba mais sobre Consórcio para veículos - Jaber Seguros"
                   aria-label="Saiba mais sobre Consórcio para veículos, carro e moto sem juros, e solicite uma cotação"
@@ -119,7 +119,7 @@ export function VehiclesConsortium() {
             </ul>
             <div className="mlg:flex! hidden! mx-auto w-fit flex-center rounded-full bg-accent-foreground text-primary-foreground">
               <Link
-                href="/seguros/empresarial"
+                href="/servicos/consorcio-veiculos"
                 className="size-full flex-center p-4 px-6"
                 title="Saiba mais sobre Consórcio para veículos - Jaber Seguros"
                 aria-label="Saiba mais sobre Consórcio para veículos, carro e moto sem juros, e solicite uma cotação"

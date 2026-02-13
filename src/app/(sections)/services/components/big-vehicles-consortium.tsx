@@ -221,7 +221,7 @@ export function BigVehiclesConsortium() {
             asChild
             className="w-full bg-accent-foreground py-8 text-primary-foreground hover:bg-accent-foreground hover:text-primary-foreground/80"
           >
-            <Link href="/consorcios/veiculos-pesados">
+            <Link href="/servicos/consorcio-veiculos-pesados">
               Saiba Mais <ArrowRightIcon className="size-4" aria-hidden />
             </Link>
           </Button>

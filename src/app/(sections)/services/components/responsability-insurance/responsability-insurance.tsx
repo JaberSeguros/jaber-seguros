@@ -92,7 +92,7 @@ export function ResponsabilityInsurance() {
               asChild
             >
               <Link
-                href="/seguros/responsabilidade-civil"
+                href="/servicos/seguro-responsabilidade-civil"
                 aria-label="Saiba mais sobre Seguro de Responsabilidade Civil e solicite uma cotação"
                 title="Seguro de Responsabilidade Civil - Jaber Seguros"
               >

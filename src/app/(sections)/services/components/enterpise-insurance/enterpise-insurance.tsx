@@ -127,7 +127,7 @@ export function EnterpriseInsurance() {
                   className="w-full flex-center rounded-2xl bg-accent-foreground p-6 text-primary-foreground"
                 >
                   <Link
-                    href="/seguros/seguro-empresarial"
+                    href="/servicos/seguro-empresarial"
                     className="size-full flex-center"
                     title="Saiba mais sobre Seguro Empresarial - Jaber Seguros"
                     aria-label="Saiba mais sobre Seguro Empresarial, coberturas e como contratar"
