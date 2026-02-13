@@ -1,6 +1,7 @@
+"use client";
+
 import { PlusIcon } from "lucide-react";
 import { Accordion as AccordionPrimitive } from "radix-ui";
-
 import {
   Accordion,
   AccordionContent,
@@ -21,8 +22,8 @@ export function AccordionFAQ({
     >
       {items.map((item) => (
         <AccordionItem
-          className="rounded-[0.35rem] border border-none bg-border/30 px-4 py-2 outline-none last:border-b has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50"
           key={item.id}
+          className="rounded-[0.35rem] border border-none bg-border/30 px-4 py-2 outline-none last:border-b has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50"
           value={item.id}
         >
           <AccordionPrimitive.Header className="flex">

@@ -33,10 +33,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type React from "react";
 import { CTA } from "@/app/(sections)/CTA/cta";
+import { AnimatedParagraph } from "@/app/(sections)/vision/components/animated-paragrap";
 import { AccordionFAQ } from "@/components/accordion-faq";
+import { AnimatedText } from "@/components/animated-text/animated-text";
+import { AnimatedImage } from "@/components/animted-image/animated-image";
 import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
 import { getServiceBySlug, type ServiceSlug } from "@/lib/services";
+import { AnimateDivFadeUp } from "./components/animate-div-fade-up";
+import { DifferencialItemCard } from "./components/differencial-item-card";
+import { PersonalizedCustomerService } from "./components/personalized-customer-service";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://jaberseguros.com.br";
@@ -196,25 +202,25 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
         aria-label={`${service.headline} - Jaber Seguros`}
       >
         {/* Hero: two columns, text left + image right */}
-        <section className="border-border/60 border-b bg-border/30 pt-25">
+        <section className="border-border/60 border-b bg-border/30 pt-20">
           <div className="mx-auto flex max-w-[85rem] flex-col gap-10 px-4 py-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:py-16">
             <div className="flex max-w-xl flex-col gap-6">
-              <p className="font-semibold text-muted-foreground text-sm uppercase tracking-wider">
+              <p className="animate-fade-up font-semibold text-muted-foreground text-sm uppercase tracking-wider">
                 {service.label}
               </p>
               <h1
                 id="service-heading"
-                className="font-bold text-3xl leading-tight md:text-4xl lg:text-5xl"
+                className="animate-fade-up font-bold text-3xl leading-tight [animation-delay:200ms] md:text-4xl lg:text-5xl"
               >
                 {service.headline}
               </h1>
-              <p className="text-base text-muted-foreground md:text-lg">
+              <p className="animate-fade-up text-base text-muted-foreground [animation-delay:400ms] md:text-lg">
                 {service.sub}
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button
                   asChild
-                  className="rounded-full px-6 py-6 font-bold text-base"
+                  className="animate-fade-up rounded-full px-6 py-6 font-bold text-base [animation-delay:600ms]"
                 >
                   <Link
                     href={`https://wa.me/5511993101907?text=${encodeURIComponent(message)}`}
@@ -229,48 +235,43 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                 <Button
                   asChild
                   variant="outline"
-                  className="rounded-full border-2 px-6 py-6 font-bold text-base"
+                  className="animate-fade-up rounded-full border-2 px-6 py-6 font-bold text-base [animation-delay:700ms]"
                 >
                   <Link href="#detalhes">Saiba mais</Link>
                 </Button>
               </div>
             </div>
-            <div className="relative aspect-4/3 max-h-[450px] w-full overflow-hidden rounded-[0.35rem] md:shrink-0 lg:max-h-none lg:max-w-2xl">
-              <Image
-                src={service.image}
-                alt={service.headline}
-                fill
-                className="object-cover object-center"
-                priority
-                sizes="(max-width: 768px) 100vw, 1500px"
-              />
-            </div>
+            <AnimatedImage
+              imageContainerClassName="relative aspect-4/3 max-h-[450px] w-full overflow-hidden rounded-[0.35rem] md:shrink-0 lg:max-h-none lg:max-w-2xl"
+              src={service.image}
+              alt={service.headline}
+            />
           </div>
         </section>
 
         {/* Differentials: "O que você tem com a Jaber" + 3 cards */}
         <section className="mx-auto max-w-[85rem] px-4 py-20 md:py-32 lg:py-40">
-          <h2 className="mb-10 font-bold text-2xl md:text-3xl lg:text-4xl">
+          <AnimatedText
+            as="h2"
+            id="differencial-heading"
+            className="mb-10 font-bold text-2xl md:text-3xl lg:text-4xl"
+            type="words"
+          >
             O diferencial Jaber
-          </h2>
+          </AnimatedText>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {service.diferenciais.map((diff, index) => {
               const Icon =
                 DIFFERENTIAL_ICON_MAP[diff.icon] ?? RiShieldCheckLine;
               return (
-                <div
+                <DifferencialItemCard
                   key={`${service.slug}-diff-${index}`}
-                  className="flex items-start gap-6 rounded-[0.35rem] bg-border/30 p-6"
-                >
-                  <Icon className="size-12 shrink-0" aria-hidden />
-
-                  <div>
-                    <h3 className="font-semibold text-lg">{diff.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {diff.content}
-                    </p>
-                  </div>
-                </div>
+                  slug={service.slug}
+                  index={index}
+                  title={diff.title}
+                  content={diff.content}
+                  icon={<Icon className="size-12 shrink-0" aria-hidden />}
+                />
               );
             })}
           </div>
@@ -284,31 +285,10 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                 sizes="400px"
               />
             </div>
-            <div className="flex w-full flex-col gap-4 lg:flex-row lg:justify-between">
-              <div className="min-w-0 flex-1 text-center lg:text-left">
-                <p className="font-semibold text-lg">
-                  Atendimento personalizado e sem custo
-                </p>
-                <p className="text-muted-foreground text-sm">
-                  Conte com nossa equipe para tirar dúvidas e solicitar sua
-                  cotação com agilidade.
-                </p>
-              </div>
-              <Button
-                asChild
-                className="mx-auto w-full max-w-lg shrink-0 rounded-full px-6 py-6 font-bold lg:w-fit"
-              >
-                <Link
-                  href={`https://wa.me/5511993101907?text=${encodeURIComponent(message)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={`Falar sobre ${service.headline} - Jaber Seguros`}
-                  aria-label={`Abrir conversa no WhatsApp para falar sobre ${service.headline} - Jaber Seguros`}
-                >
-                  Falar com especialista
-                </Link>
-              </Button>
-            </div>
+            <PersonalizedCustomerService
+              message={message}
+              headline={service.headline}
+            />
           </div>
         </section>
 
@@ -320,20 +300,25 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
           <div className="mx-auto max-w-[58rem] px-4 py-16 md:py-20">
             <div className="flex flex-col gap-6 lg:flex-row lg:justify-between">
               <div className="space-y-6 lg:max-w-lg">
-                <h2 className="mb-12 font-bold text-2xl md:text-3xl">
+                <AnimatedText
+                  as="h2"
+                  id="detalhes-heading"
+                  className="mb-12 font-bold text-2xl md:text-3xl"
+                  type="words"
+                >
                   Informações para sua decisão
-                </h2>
+                </AnimatedText>
                 <div className="grid gap-16 lg:grid-cols-[1fr,minmax(0,28rem)]">
                   <div className="flex flex-col gap-12">
-                    <div>
+                    <AnimateDivFadeUp>
                       <h3 className="mb-3 font-semibold text-[1.35rem]">
                         Sobre {service.headline}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
                         {service.detalhes.sobre}
                       </p>
-                    </div>
-                    <div>
+                    </AnimateDivFadeUp>
+                    <AnimateDivFadeUp>
                       <h3 className="mb-3 font-semibold text-[1.35rem]">
                         O que está incluso
                       </h3>
@@ -348,8 +333,8 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                           </li>
                         ))}
                       </ul>
-                    </div>
-                    <div>
+                    </AnimateDivFadeUp>
+                    <AnimateDivFadeUp>
                       <h3 className="mb-3 font-semibold text-[1.35rem]">
                         Como funciona
                       </h3>
@@ -363,16 +348,16 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                           </li>
                         ))}
                       </ol>
-                    </div>
-                    <div>
+                    </AnimateDivFadeUp>
+                    <AnimateDivFadeUp>
                       <h3 className="mb-3 font-semibold text-[1.35rem]">
                         Por que importa
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
                         {service.detalhes.porQueImportante}
                       </p>
-                    </div>
-                    <div>
+                    </AnimateDivFadeUp>
+                    <AnimateDivFadeUp>
                       <h3 className="mb-3 font-semibold text-xl">
                         Comece agora
                       </h3>
@@ -394,12 +379,12 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                           {service.detalhes.cta}
                         </Link>
                       </Button>
-                    </div>
+                    </AnimateDivFadeUp>
                   </div>
                 </div>
               </div>
               {/* Sidebar CTA box */}
-              <div className="h-fit rounded-[0.35rem] border bg-card p-6 lg:sticky lg:top-24 lg:max-w-xs">
+              <AnimateDivFadeUp className="h-fit rounded-[0.35rem] border bg-card p-6 lg:sticky lg:top-24 lg:max-w-xs">
                 <h3 className="mb-2 font-semibold text-lg">Comece agora</h3>
                 <p className="mb-4 text-muted-foreground text-sm">
                   Solicite uma cotação sem compromisso. Nossa equipe retorna em
@@ -416,7 +401,7 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
                     {service.cta}
                   </Link>
                 </Button>
-              </div>
+              </AnimateDivFadeUp>
             </div>
           </div>
         </section>
@@ -425,20 +410,25 @@ Poderia me orientar sobre as melhores opções para o meu perfil?`;
         <section className="mx-auto max-w-[85rem] px-4 py-20 md:py-32 lg:py-40">
           <div className="flex flex-col gap-10 lg:flex-row lg:justify-center lg:gap-16">
             <div>
-              <p className="mb-2 font-semibold text-muted-foreground text-sm uppercase tracking-wider">
+              <AnimatedParagraph className="mb-2 font-semibold text-muted-foreground text-sm uppercase tracking-wider">
                 FAQ
-              </p>
-              <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl">
+              </AnimatedParagraph>
+              <AnimatedText
+                as="h2"
+                className="font-bold text-2xl md:text-3xl lg:text-4xl"
+              >
                 Perguntas frequentes
-              </h2>
-              <p className="mt-3 text-muted-foreground text-sm">
+              </AnimatedText>
+              <AnimatedParagraph className="mt-3 text-muted-foreground text-sm">
                 Em caso de dúvidas, confira as respostas abaixo ou entre em
                 contato.
-              </p>
+              </AnimatedParagraph>
             </div>
             <div className="min-w-0 lg:max-w-3xl">
               {faqItems.length > 0 ? (
-                <AccordionFAQ items={faqItems} />
+                <AnimateDivFadeUp>
+                  <AccordionFAQ items={faqItems} />
+                </AnimateDivFadeUp>
               ) : (
                 <p className="text-muted-foreground text-sm">
                   Nenhuma pergunta cadastrada. Entre em contato para tirar suas

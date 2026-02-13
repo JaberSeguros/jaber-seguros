@@ -1,11 +1,27 @@
+"use client";
+
+import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import { fadeUpVariants } from "@/app/(sections)/message/anime";
 import { Button } from "@/components/ui/button";
 
 export function CTA() {
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ctaRef, {
+    once: true,
+    amount: 0.5,
+  });
   return (
     <section className="mx-auto w-full max-w-[85rem] px-4">
-      <div className="h-fit w-full rounded-lg bg-primary/20 px-4 py-12 lg:px-12 lg:py-24">
+      <motion.div
+        ref={ctaRef}
+        variants={fadeUpVariants}
+        initial="initial"
+        animate={isInView ? "animate" : "initial"}
+        className="h-fit w-full rounded-lg bg-primary/20 px-4 py-12 lg:px-12 lg:py-24"
+      >
         <div className="mx-auto flex w-fit flex-col items-center gap-6">
           <div className="relative size-24">
             <Image
@@ -31,7 +47,7 @@ export function CTA() {
             </Link>
           </Button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
