@@ -8,6 +8,7 @@ import { EnterpriseInsurance } from "./components/enterpise-insurance";
 import { EnterpriseHealth } from "./components/enterprise-health";
 import { GarantyInsurance } from "./components/garanty-insurance";
 import { HealthInsurance } from "./components/health-insurance";
+import { RealEstateConsortium } from "./components/real-estate-consortium";
 import { ResponsabilityInsurance } from "./components/responsability-insurance";
 import { VehiclesConsortium } from "./components/vehicles-consortium";
 
@@ -36,6 +37,7 @@ export function Services() {
         <ResponsabilityInsurance />
         <BigVehiclesConsortium />
         <VehiclesConsortium />
+        <RealEstateConsortium />
       </div>
     </section>
   );

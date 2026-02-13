@@ -92,7 +92,7 @@ export function VehiclesConsortium() {
                       src={item.src}
                       alt={item.alt}
                       fill
-                      className="mask-[linear-gradient(to_bottom,black_45%,transparent_80%)] object-cover object-center"
+                      className="mask-[linear-gradient(to_bottom,black_45%,transparent_77%)] object-cover object-center"
                       sizes="(max-width: 768px) 100vw, 1500px"
                     />
                     <div className="absolute inset-0 flex flex-col justify-end gap-2 px-5.5 pb-2">
