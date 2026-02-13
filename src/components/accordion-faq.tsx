@@ -21,7 +21,7 @@ export function AccordionFAQ({
     >
       {items.map((item) => (
         <AccordionItem
-          className="rounded-md border bg-background px-4 py-1 outline-none last:border-b has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50"
+          className="rounded-[0.35rem] border border-none bg-border/30 px-4 py-2 outline-none last:border-b has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50"
           key={item.id}
           value={item.id}
         >
