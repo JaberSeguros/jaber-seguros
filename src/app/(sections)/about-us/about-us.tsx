@@ -51,7 +51,7 @@ export function AboutUs() {
         <div className="flex flex-col gap-4 lg:flex-row lg:justify-between">
           <div className="w-full">
             <AnimatedImage
-              imageContainerClassName="aspect-square max-h-[300px] md:max-h-[550px] w-full max-w-3xl overflow-hidden rounded-xl"
+              imageContainerClassName="aspect-square max-h-[300px] md:max-h-[550px] w-full max-w-3xl overflow-hidden rounded-[0.35rem]"
               src="/assets/about/about-1.webp"
               alt="Consultoria Jaber Seguros - Escritório especializado em seguros, consórcios e benefícios"
             />
@@ -59,7 +59,7 @@ export function AboutUs() {
           <div className="flex w-full max-w-4xl items-start gap-4 lg:max-w-lg lg:flex-col lg:gap-6">
             <div className="w-full">
               <AnimatedImage
-                imageContainerClassName="aspect-square md:aspect-video max-h-[550px] w-full max-w-lg overflow-hidden rounded-xl"
+                imageContainerClassName="aspect-square md:aspect-video max-h-[550px] w-full max-w-lg overflow-hidden rounded-[0.35rem]"
                 src="/assets/about/about-2.webp"
                 alt="Equipe Jaber Seguros - Atendimento personalizado para empresas e pessoas físicas"
               />

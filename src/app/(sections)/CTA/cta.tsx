@@ -20,7 +20,7 @@ export function CTA() {
         variants={fadeUpVariants}
         initial="initial"
         animate={isInView ? "animate" : "initial"}
-        className="h-fit w-full rounded-lg bg-primary/20 px-4 py-12 lg:px-12 lg:py-24"
+        className="h-fit w-full rounded-[0.35rem] bg-primary/20 px-4 py-12 lg:px-12 lg:py-24"
       >
         <div className="mx-auto flex w-fit flex-col items-center gap-6">
           <div className="relative size-24">

@@ -56,7 +56,7 @@ export function Message() {
         variants={fadeUpVariants}
         initial="initial"
         animate={isInView ? "animate" : "initial"}
-        className="mx-auto w-full max-w-4xl rounded-lg bg-primary/20 p-6 lg:p-12"
+        className="mx-auto w-full max-w-4xl rounded-[0.35rem] bg-primary/20 p-6 lg:p-12"
       >
         <blockquote className="space-y-6">
           <QuoteIcon
