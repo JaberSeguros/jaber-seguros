@@ -180,7 +180,7 @@ export default function Contato() {
                 </p>
               </div>
             </div>
-            <div className="relative aspect-video w-full animate-fade-up overflow-hidden rounded-lg [animation-delay:400ms]">
+            <div className="relative aspect-video w-full animate-fade-up overflow-hidden rounded-[0.35rem] [animation-delay:400ms]">
               <Image
                 src="/assets/variadas/essence-3.webp"
                 alt="Contato Jaber Seguros - Fale com um especialista em seguros e consórcios em São Paulo"
