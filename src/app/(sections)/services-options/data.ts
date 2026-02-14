@@ -2,7 +2,7 @@ export const services = [
   {
     id: 1,
     type: "Seguros",
-    src: "/assets/serviços/seguros/saude.webp",
+    src: "/assets/serviços/seguros/pexels-polina-tankilevitch-5234508.jpg",
     alt: "Seguro Saúde",
     title: "Seguro Saúde",
     sub: "Proteção para quem mais importa",
@@ -62,7 +62,7 @@ export const services = [
     sub: "Seu próximo veículo, sem juros",
     description:
       "Planeje a compra do seu carro ou moto com parcelas que cabem no bolso.",
-    href: "/servicos/veiculo",
+    href: "/servicos/consorcio-veiculos",
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ export const services = [
     sub: "O caminho seguro para seu imóvel",
     description:
       "Conquiste sua casa ou investimento imobiliário com planejamento e segurança.",
-    href: "/servicos/imovel",
+    href: "/servicos/consorcio-imoveis",
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ export const services = [
     sub: "Invista no futuro com economia",
     description:
       "Consórcio para energia solar e soluções sustentáveis, sem juros.",
-    href: "/servicos/sustentavel",
+    href: "/servicos/consorcio-sustentavel",
   },
   {
     id: 9,
@@ -95,6 +95,6 @@ export const services = [
     sub: "Força para grandes conquistas",
     description:
       "Consórcio para máquinas e veículos pesados, com planejamento e segurança.",
-    href: "/servicos/veiculo-pesado",
+    href: "/servicos/consorcio-veiculos-pesados",
   },
 ];
