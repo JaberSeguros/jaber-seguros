@@ -23,7 +23,7 @@ export const services = [
     label: "Seguro",
     headline: "Seguro Saúde",
     sub: "Plano de saúde empresarial completo, com atendimento personalizado e as melhores operadoras do mercado para cuidar do que realmente importa: as pessoas.",
-    image: "/assets/serviços/seguros/saude.webp",
+    image: "/assets/serviços/seguros/pexels-polina-tankilevitch-5234508.jpg",
     diferenciais: [
       {
         title: "Análise estratégica e sob medida",

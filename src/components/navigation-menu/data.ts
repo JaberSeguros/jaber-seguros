@@ -2,7 +2,7 @@ export const seguros = [
   {
     id: 1,
     type: "Seguro Saúde",
-    image: "/assets/serviços/seguros/saude.webp",
+    image: "/assets/serviços/seguros/pexels-polina-tankilevitch-5234508.jpg",
     headline: "Proteção para quem mais importa",
     sub: "Planos de saúde acessíveis e sem burocracia.",
     cta: "Conheça os planos",
@@ -22,8 +22,7 @@ export const seguros = [
     type: "Seguro Empresarial",
     image: "/assets/serviços/seguros/empresarial.webp",
     headline: "Proteção completa para o seu negócio",
-    sub:
-      "Cobertura sob medida para proteger patrimônio, operações e continuidade da empresa.",
+    sub: "Cobertura sob medida para proteger patrimônio, operações e continuidade da empresa.",
     cta: "Conheça os planos",
     href: "/servicos/seguro-empresarial",
   },
