@@ -549,7 +549,7 @@ export function ContactForm() {
                   >
                     Li e aceito os{" "}
                     <a
-                      href="/politica-de-privacidade"
+                      href="/termos-de-uso"
                       className="text-primary underline underline-offset-4 hover:no-underline"
                     >
                       termos de uso
