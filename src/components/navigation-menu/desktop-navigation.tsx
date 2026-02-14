@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,10 +8,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 import { consorcios, seguros } from "./data";
 import { NavigationMenuCardContent } from "./navigation-menu-card-content";
 
 export function DesktopNavigation() {
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
+
   return (
     <nav className="hidden md:flex" aria-label="Menu principal">
       <NavigationMenu>
@@ -43,7 +48,12 @@ export function DesktopNavigation() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink asChild>
+            <NavigationMenuLink
+              asChild
+              className={cn(
+                isActive("/servicos") && "bg-accent/50 text-accent-foreground",
+              )}
+            >
               <Link
                 href="/servicos"
                 className="font-semibold"
@@ -54,7 +64,12 @@ export function DesktopNavigation() {
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink asChild>
+            <NavigationMenuLink
+              asChild
+              className={cn(
+                isActive("/sobre-nos") && "bg-accent/50 text-accent-foreground",
+              )}
+            >
               <Link
                 href="/sobre-nos"
                 className="font-semibold"
