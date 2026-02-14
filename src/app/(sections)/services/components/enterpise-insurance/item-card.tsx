@@ -22,7 +22,7 @@ export function ItemCard({ id, title, description }: ItemCardProps) {
       variants={fadeUpVariants}
       initial="initial"
       animate={isInView ? "animate" : "initial"}
-      className="flex flex-col gap-4 rounded-2xl bg-border/30 p-6"
+      className="flex flex-col gap-4 rounded-[0.35rem] bg-border/30 p-6"
     >
       <div className="size-12 flex-center rounded-full bg-border" aria-hidden>
         <span className="font-bold text-xl">{`0${id}`}</span>

@@ -27,7 +27,7 @@ export function ResponsabilityItemCard({
       variants={fadeUpVariants}
       initial="initial"
       animate={isInView ? "animate" : "initial"}
-      className="rounded-sm bg-accent-foreground p-6"
+      className="rounded-[0.35rem] bg-accent-foreground p-6"
     >
       <div
         className={cn(

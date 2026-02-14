@@ -148,7 +148,7 @@ export function BigVehiclesConsortium() {
                 );
               })}
             </div>
-            <div className="relative h-[80vh] min-h-[520px] w-full overflow-hidden rounded-2xl">
+            <div className="relative h-[80vh] min-h-[520px] w-full overflow-hidden rounded-[0.35rem]">
               <div className="absolute top-0 z-12 w-full 2xl:hidden">
                 <div className="grid grid-cols-4 sm:grid-cols-4">
                   {items.map((item) => (
@@ -197,7 +197,7 @@ export function BigVehiclesConsortium() {
                       className="size-full object-cover object-center"
                       sizes="(max-width: 768px) 100vw, 1500px"
                     />
-                    <div className="-translate-x-1/2 absolute bottom-2 left-1/2 w-[92%] max-w-xl rounded-lg bg-primary/40 p-6 backdrop-blur-xs backdrop-brightness-75">
+                    <div className="-translate-x-1/2 absolute bottom-2 left-1/2 w-[92%] max-w-xl rounded-sm bg-primary/40 p-6 backdrop-blur-xs backdrop-brightness-75">
                       <div className="flex flex-col gap-8">
                         <div className="w-fit shrink-0 rounded-full bg-primary/60 p-4 md:p-2">
                           <image.Icon color="#ffffff" size={40} />

@@ -119,7 +119,7 @@ export function GarantyInsurance() {
                 animate={isInView ? "animate" : "initial"}
                 className="aspect-video md:col-span-2 lg:col-span-1 lg:row-span-2 lg:aspect-auto"
               >
-                <div className="relative size-full overflow-hidden rounded-sm">
+                <div className="relative size-full overflow-hidden rounded-[0.35rem]">
                   <Image
                     src="/assets/serviços/seguros/garantia.webp"
                     alt="Seguro Garantia Jaber Seguros - segurança jurídica, cumprimento contratual, alternativa à fiança bancária e credibilidade em licitações"

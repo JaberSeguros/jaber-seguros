@@ -47,7 +47,7 @@ export function HealthInsurance() {
           <div className="mx-auto flex w-fit flex-col gap-8">
             <div className="relative">
               <AnimatedImage
-                imageContainerClassName="relative aspect-1/2 max-h-[550px] w-[92vw] overflow-hidden rounded-2xl lg:w-[30vw] lg:max-w-[526px]"
+                imageContainerClassName="relative aspect-1/2 max-h-[550px] w-[92vw] overflow-hidden rounded-[0.35rem] lg:w-[30vw] lg:max-w-[526px]"
                 src="/assets/serviços/seguros/saude-1.webp"
                 alt="Seguro Saúde Jaber Seguros - Cuidar da sua vida com tranquilidade e qualidade"
                 hasAbsoluteContent
@@ -88,7 +88,7 @@ export function HealthInsurance() {
             </AnimatedText>
             <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:items-end">
               <AnimatedImage
-                imageContainerClassName="relative aspect-2/3 max-h-[350px] w-[92vw] overflow-hidden rounded-2xl lg:max-h-[500px] lg:w-[35vw] lg:max-w-[466px]"
+                imageContainerClassName="relative aspect-2/3 max-h-[350px] w-[92vw] overflow-hidden rounded-[0.35rem] lg:max-h-[500px] lg:w-[35vw] lg:max-w-[466px]"
                 src="/assets/serviços/seguros/saude-2.webp"
                 alt="Planos de saúde Jaber Seguros - Principais operadoras com suporte humanizado"
               />
@@ -111,7 +111,7 @@ export function HealthInsurance() {
                     </Link>
                   </Button>
                 </div>
-                <div className="w-full rounded-2xl border bg-chart-5 p-6 lg:w-[90%]">
+                <div className="w-full rounded-xl border bg-chart-5 p-6 lg:w-[90%]">
                   <div className="flex w-full flex-col gap-15">
                     <p
                       id="benefits-heading"

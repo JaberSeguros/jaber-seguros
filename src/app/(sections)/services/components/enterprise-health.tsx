@@ -43,7 +43,10 @@ export function EnterpriseHealth() {
       aria-label="Seguro Vida Empresarial - Planos e benefícios para empresas Jaber Seguros"
     >
       <div className="flex w-full flex-col gap-10 lg:gap-15">
-        <ServiceIntro title="Seguro Vida Empresarial" alt="Seguro Vida Empresarial" />
+        <ServiceIntro
+          title="Seguro Vida Empresarial"
+          alt="Seguro Vida Empresarial"
+        />
         <div className="flex w-full flex-col gap-10">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
             <h3 className="max-w-xl font-bold text-3xl md:text-4xl lg:text-5xl">
@@ -74,10 +77,10 @@ export function EnterpriseHealth() {
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:gap-8">
             <AnimatedImage
               src="/assets/serviços/seguros/seguro-empresarial.webp"
-              imageContainerClassName="relative aspect-8/16 w-full overflow-hidden rounded-2xl max-h-[500px] lg:max-h-[630px] lg:min-w-[450px] lg:w-[43vw] lg:max-w-[530px] xl:min-w-[550px]"
+              imageContainerClassName="relative aspect-8/16 w-full overflow-hidden rounded-[0.35rem] max-h-[500px] lg:max-h-[630px] lg:min-w-[450px] lg:w-[43vw] lg:max-w-[530px] xl:min-w-[550px]"
               alt="Seguro de Vida Empresarial Jaber Seguros - Proteção inteligente para quem faz sua empresa crescer."
               hasAbsoluteContent
-              absoluteContentClassName="-translate-x-1/2 absolute bottom-4 left-1/2 w-[90%] rounded-lg bg-primary-foreground p-6 backdrop-blur-xs lg:max-w-lg"
+              absoluteContentClassName="-translate-x-1/2 absolute bottom-4 left-1/2 w-[90%] rounded-[0.35rem] bg-primary-foreground p-6 backdrop-blur-xs lg:max-w-lg"
             >
               <div className="mx-auto flex w-full max-w-md flex-col items-center gap-8">
                 <div className="flex w-full items-center gap-2">
@@ -134,7 +137,7 @@ export function EnterpriseHealth() {
               ))}
             </ol>
           </div>
-          <div className="mx-auto aspect-video max-h-[330px] w-full max-w-3xl flex-center rounded-2xl border bg-primary/15">
+          <div className="mx-auto aspect-video max-h-[330px] w-full max-w-3xl flex-center rounded-[0.35rem] border bg-primary/15">
             <div className="flex flex-col items-center gap-8 p-6">
               <div className="relative size-24">
                 <Image

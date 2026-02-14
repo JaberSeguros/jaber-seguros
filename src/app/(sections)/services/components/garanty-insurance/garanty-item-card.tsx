@@ -27,7 +27,7 @@ export function GarantyItemCard({
       variants={fadeUpVariants}
       initial="initial"
       animate={isInView ? "animate" : "initial"}
-      className={cn("rounded-sm bg-background p-6", className)}
+      className={cn("rounded-[0.35rem] bg-background p-6", className)}
     >
       <div className="flex flex-col justify-between gap-20">
         <div
