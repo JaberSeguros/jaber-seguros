@@ -5,6 +5,7 @@ import {
   RiMailLine,
   RiMapPin3Line,
   RiMapPin4Line,
+  RiMoneyDollarCircleLine,
   RiUserLine,
 } from "@remixicon/react";
 import { PhoneIcon } from "lucide-react";
@@ -36,21 +37,59 @@ import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import { formatPhone, getPhoneDigits } from "@/lib/phone";
 
+function getCurrencyDigits(value: string): string {
+  return value.replace(/\D/g, "");
+}
+
+function formatCurrencyBRL(digits: string): string {
+  if (!digits) return "";
+  const n = Number.parseInt(digits, 10) || 0;
+  const centavos = n % 100;
+  const reais = Math.floor(n / 100);
+  const reaisStr = reais.toLocaleString("pt-BR", {
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+  });
+  return `R$ ${reaisStr},${centavos.toString().padStart(2, "0")}`;
+}
+
 const formSchema = z.object({
-  name: z.string().min(1, { message: "Nome é obrigatório" }),
+  name: z.string().refine((value) => value.split(" ").length > 1, {
+    message: "Deve conter nome e sobrenome",
+  }),
   email: z.email({ message: "Email é obrigatório" }),
-  phone: z.string().min(1, { message: "Telefone é obrigatório" }),
+  phone: z
+    .number({ error: "Telefone é obrigatório" })
+    .min(1, { message: "Telefone é obrigatório" }),
   message: z.string().min(1, { message: "Mensagem é obrigatória" }),
   state: z.string().min(1, { message: "Estado é obrigatório" }),
   city: z.string().min(1, { message: "Cidade é obrigatória" }),
   service: z.string().min(1, { message: "Serviço é obrigatório" }),
   typeOfPerson: z.enum(["fisica", "juridica"]),
-  livesQuantity: z.number().optional(),
-  aproximateValue: z.number().optional(),
+  livesQuantity: z.string().optional(),
+  estimatedValue: z.string().optional(),
   interestBrand: z.string().optional(),
   LGPD: z.boolean().refine((value) => value, {
     message: "Você deve aceitar os termos de uso e política de privacidade",
   }),
+}).superRefine((data, ctx) => {
+  const needsLives =
+    data.service === "seguro-saude" ||
+    data.service === "seguro-vida-empresarial";
+  if (needsLives && !data.livesQuantity?.trim()) {
+    ctx.addIssue({
+      code: "custom",
+      message: "Quantidade de vidas é obrigatória",
+      path: ["livesQuantity"],
+    });
+  }
+  if (data.service?.includes("consorcio") && !data.estimatedValue?.trim()) {
+    ctx.addIssue({
+      code: "custom",
+      message: "Valor aproximado é obrigatório",
+      path: ["estimatedValue"],
+    });
+  }
 });
 
 export function ContactForm() {
@@ -61,14 +100,14 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      phone: "",
+      phone: undefined,
       message: "",
       state: "",
       city: "",
       service: "",
       typeOfPerson: "fisica",
-      livesQuantity: undefined,
-      aproximateValue: undefined,
+      livesQuantity: "",
+      estimatedValue: "",
       interestBrand: "",
       LGPD: false,
     },
@@ -84,7 +123,7 @@ export function ContactForm() {
     setTimeout(() => {
       toast.custom((t) => (
         <Toaster
-          message="Orcamento solicitado com sucesso, em até 2 horas entraremos em contato."
+          message="Mensagem enviada com sucesso, em até 24 horas entraremos em contato."
           onClick={() => toast.dismiss(t)}
         />
       ));
@@ -380,7 +419,7 @@ export function ContactForm() {
                         field={field}
                         label="Quantidade de vidas"
                         placeholder="Quantidade de vidas"
-                        type="number"
+                        type="text"
                         required
                       />
                     </FormControl>
@@ -392,20 +431,47 @@ export function ContactForm() {
             {serviceValue.includes("consorcio") && (
               <FormField
                 control={form.control}
-                name="aproximateValue"
+                name="estimatedValue"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <InputWithIcon
-                        Icon={
-                          <RiUserLine className="size-4 text-muted-foreground" />
-                        }
-                        field={field}
-                        label="Valor aproximado"
-                        placeholder="Valor aproximado do bem"
-                        type="number"
-                        required
-                      />
+                      <div className="*:not-first:mt-2">
+                        <FormLabel
+                          htmlFor={field.name}
+                          className="flex items-center gap-1"
+                        >
+                          Valor aproximado{" "}
+                          <span className="text-destructive">*</span>
+                        </FormLabel>
+                        <div className="relative">
+                          <Input
+                            className="peer h-11 rounded-lg ps-9"
+                            inputMode="numeric"
+                            placeholder="R$ 0,00"
+                            value={
+                              typeof field.value === "string" && field.value
+                                ? formatCurrencyBRL(getCurrencyDigits(field.value))
+                                : ""
+                            }
+                            name={field.name}
+                            onBlur={field.onBlur}
+                            ref={field.ref}
+                            onChange={(event) => {
+                              const digits = getCurrencyDigits(
+                                event.target.value,
+                              ).slice(0, 14);
+                              field.onChange(
+                                digits
+                                  ? formatCurrencyBRL(digits)
+                                  : "",
+                              );
+                            }}
+                          />
+                          <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
+                            <RiMoneyDollarCircleLine className="size-4 text-muted-foreground" />
+                          </div>
+                        </div>
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -418,7 +484,7 @@ export function ContactForm() {
               control={form.control}
               name="interestBrand"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="mt-4">
                   <FormControl>
                     <InputWithIcon
                       Icon={

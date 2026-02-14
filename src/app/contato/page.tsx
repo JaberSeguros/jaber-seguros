@@ -223,8 +223,10 @@ export default function Contato() {
               <ContactAccordion items={items} />
             </div>
           </div>
-          <CTA />
         </section>
+        <div className="mt-15">
+          <CTA />
+        </div>
       </main>
     </>
   );
