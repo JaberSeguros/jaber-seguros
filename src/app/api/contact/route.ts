@@ -86,9 +86,8 @@ export async function POST(request: Request) {
     `;
 
     const { error } = await resend.emails.send({
-      from: "Jaber Seguros <no-reply@jaberseguros.com.br>",
-      to: ["jaber@saberseguros.com.br"],
-      replyTo: email,
+      from: email,
+      to: ["jaber@jaberseguros.com.br"],
       subject,
       html,
     });
