@@ -117,19 +117,58 @@ export function ContactForm() {
     useWatch({ control: form.control, name: "service", defaultValue: "" }) ??
     "";
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    setIsLoading(true);
-    setTimeout(() => {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      setIsLoading(true);
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...values,
+          phone: values.phone ? String(values.phone) : "",
+        }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        const errorMessage =
+          data?.error ?? "Não foi possível enviar sua mensagem.";
+
+        toast.custom((t) => (
+          <Toaster
+            message={errorMessage}
+            onClick={() => toast.dismiss(t)}
+          />
+        ));
+        return;
+      }
+
       toast.custom((t) => (
         <Toaster
-          message="Mensagem enviada com sucesso, em até 24 horas entraremos em contato."
+          message={
+            data?.message ??
+            "Mensagem enviada com sucesso, em até 24 horas entraremos em contato."
+          }
           onClick={() => toast.dismiss(t)}
         />
       ));
-      setIsLoading(false);
+
       form.reset();
-    }, 1000);
+    } catch (error) {
+      console.error(error);
+      toast.custom((t) => (
+        <Toaster
+          message="Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde."
+          onClick={() => toast.dismiss(t)}
+        />
+      ));
+    } finally {
+      setIsLoading(false);
+    }
   }
   return (
     <Form {...form}>
