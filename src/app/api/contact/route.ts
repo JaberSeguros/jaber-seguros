@@ -86,8 +86,8 @@ export async function POST(request: Request) {
     `;
 
     const { error } = await resend.emails.send({
-      from: email,
-      to: ["jaber@jaberseguros.com.br"],
+      from: "Site Jaber <contato@jaber.jaberseguros.com>",
+      to: ["jaber@jaberseguros.com"],
       subject,
       html,
     });
@@ -97,7 +97,7 @@ export async function POST(request: Request) {
       return new Response(
         JSON.stringify({
           error:
-            "Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.",
+            error.message,
         }),
         {
           status: 500,

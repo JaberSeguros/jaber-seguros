@@ -140,8 +140,10 @@ export function ContactForm() {
 
         toast.custom((t) => (
           <Toaster
-            message={errorMessage}
+            message="Ocorreu um erro ao enviar sua mensagem."
             onClick={() => toast.dismiss(t)}
+            error={true}
+            errorMessage={errorMessage ?? "Não foi possível enviar sua mensagem."}
           />
         ));
         return;
